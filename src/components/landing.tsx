@@ -12,7 +12,7 @@ export const Greeting = () => {
                 className="w-20 h-20"
               />
             </div>
-            {/*Navigation*/}
+            {/*Navigation */}
             <div className="flex flex-1 justify-evenly ml-8">
               <button className="text-blue-900 font-semibold hover:text-blue-200 transition duration-300">
                 Home
