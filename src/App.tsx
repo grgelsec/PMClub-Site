@@ -1,11 +1,11 @@
 import { Route, Routes } from "react-router-dom";
-import { Greeting } from "./components/landing";
+import { SinglePage } from "./pages/sp";
 
 function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<Greeting />} />
+        <Route path="/" element={<SinglePage />} />
       </Routes>
     </>
   );
