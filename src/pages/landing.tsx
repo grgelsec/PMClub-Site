@@ -25,18 +25,20 @@ export const LandingPage = () => {
       </header>
 
       <div className="flex min-h-screen items-center justify-center flex-col">
-        <div className="container mx-auto shadow-xl rounded-xl py-10">
-          <div className="flex justify-center items-center flex-wrap">
-            <div className="bg-[#ffffffe0] shadow-xl p-4 rounded-xl transition-transform hover:scale-105 duration-300">
-              <h1 className="font-bold text-5xl bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent animate-gradient relative transition-transform hover:scale-103 duration-300">
-                PRODUCT MANAGEMENT CLUB
-              </h1>
-            </div>
-            <div className="w-full flex justify-center">
-              <h1 className="font-bold text-xl text-black transition-transform hover:scale-103 duration-300 mt-8 before:animate-typewritter font-mono after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black">
-                "THIS IS A SLOGAN, THIS AREA WILL BE TAKEN UP BY A CATCHY
-                SLOGAN. THIS IS WHERE THE SLOGAN GOES."
-              </h1>
+        <div className="container mx-auto shadow-xl rounded-xl p-2 bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5]">
+          <div className="container mx-auto shadow-xl rounded-xl py-10 bg-white">
+            <div className="flex justify-center items-center flex-wrap">
+              <div className="bg-[#ffffffe0] shadow-xl p-4 rounded-xl transition-transform hover:scale-105 duration-300">
+                <h1 className="font-bold text-5xl bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent animate-gradient relative transition-transform hover:scale-103 duration-300">
+                  PRODUCT MANAGEMENT CLUB
+                </h1>
+              </div>
+              <div className="w-full flex justify-center">
+                <h1 className="font-bold text-xl text-black transition-transform hover:scale-103 duration-300 mt-8 before:animate-typewritter font-mono after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black">
+                  "THIS IS A SLOGAN, THIS AREA WILL BE TAKEN UP BY A CATCHY
+                  SLOGAN. THIS IS WHERE THE SLOGAN GOES."
+                </h1>
+              </div>
             </div>
           </div>
         </div>
