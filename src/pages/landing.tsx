@@ -13,11 +13,11 @@ export const LandingPage = () => {
           </div>
           <div className="flex w-1/2  justify-end">
             <div className="flex flex-row w-1/2 ml-4  items-center mr-4 justify-center space-x-6">
-              <button className="flex bg-[#D5B8FF] px-8 py-2 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                <text className="font-bold">Join</text>
+              <button className="flex bg-lavender  px-8 py-2 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                <text className="font-bold text-white">Join</text>
               </button>
-              <button className="flex bg-[#FFD6A5] px-8 py-2 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                <text className="font-bold">Contact</text>
+              <button className="flex bg-orange-300 px-8 py-2 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                <text className="font-bold text-white">Contact</text>
               </button>
             </div>
           </div>
