@@ -1,10 +1,10 @@
 export const InterestPage = () => {
   return (
-    <div className="min-h-screen w-full p-4 sm:p-8 md:p-16 lg:p-24">
-      <div className="w-full h-screen p-4 bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl">
-        <main className="h-full w-full p-4 sm:p-6 md:p-8 lg:p-10 bg-white rounded-xl">
+    <div className="min-h-screen w-full p-24">
+      <div className="w-full min-h-screen p-2 sm:p-4 bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl">
+        <main className="h-full w-full p-4 sm:p-6 md:p-8 lg:p-24 bg-white rounded-xl">
           <div className="flex flex-col items-center max-w-7xl mx-auto">
-            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent animate-gradient relative transition-transform hover:scale-105 duration-300">
+            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent animate-gradient transition-transform hover:scale-105 duration-300">
               EXECUTIVE BOARD
             </h1>
 
@@ -22,7 +22,7 @@ export const InterestPage = () => {
                   key={index}
                   className="bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] p-[2px] rounded-xl hover:scale-105 transition-all duration-300"
                 >
-                  <div className="bg-white p-4 rounded-xl h-full flex flex-col justify-center items-center">
+                  <div className="bg-white p-6 sm:p-8 md:p-12 rounded-xl h-full flex flex-col justify-center items-center">
                     <div className="font-bold text-lg md:text-xl text-center bg-gradient-to-r from-[#D5B8FF] to-[#98FFD6] bg-clip-text text-transparent">
                       {position.name}
                     </div>
@@ -34,7 +34,7 @@ export const InterestPage = () => {
               ))}
             </div>
 
-            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent animate-gradient relative transition-transform hover:scale-105 duration-300 mt-12">
+            <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent animate-gradient transition-transform hover:scale-105 duration-300 mt-12">
               EXECUTIVE COMMITTEE
             </h1>
 
@@ -43,12 +43,13 @@ export const InterestPage = () => {
                 { name: "Ale Gotanco" },
                 { name: "Ria Kudapa" },
                 { name: "Angelina Lukose" },
+                { name: "Jason Tang" },
               ].map((position, index) => (
                 <div
                   key={index}
                   className="bg-gradient-to-br from-[#FFD6A5] via-[#98FFD6] to-[#D5B8FF] p-[2px] rounded-xl hover:scale-105 transition-all duration-300"
                 >
-                  <div className="bg-white p-4 rounded-xl h-full flex flex-col justify-center items-center">
+                  <div className="bg-white p-6 sm:p-8 md:p-12 rounded-xl h-full flex flex-col justify-center items-center">
                     <div className="font-bold text-lg md:text-xl text-center bg-gradient-to-r from-[#FFD6A5] to-[#98FFD6] bg-clip-text text-transparent">
                       {position.name}
                     </div>
@@ -58,25 +59,6 @@ export const InterestPage = () => {
                   </div>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-12 w-full flex flex-col items-center">
-              <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent animate-gradient relative transition-transform hover:scale-105 duration-300 mb-6">
-                INTERESTED?
-              </h1>
-
-              <div className="bg-gradient-to-r from-red-500 to-red-600 rounded-xl p-[2px] hover:scale-105 transition-all duration-300">
-                <div className="px-6 py-3 rounded-xl bg-gradient-to-r from-red-500 to-red-600">
-                  <h2 className="font-bold text-base sm:text-lg md:text-xl text-white text-center">
-                    ALL POSITIONS CURRENTLY FILLED
-                  </h2>
-                </div>
-              </div>
-              <div className="px-6 py-3 rounded-xl">
-                <h2 className="font-bold text-base sm:text-lg md:text-xl text-black text-center">
-                  INQUIRE @ ____
-                </h2>
-              </div>
             </div>
           </div>
         </main>

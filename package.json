@@ -13,7 +13,8 @@
     "framer-motion": "^11.16.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.1.0"
+    "react-router-dom": "^7.1.0",
+    "react-scroll-motion": "^0.3.4"
   },
   "devDependencies": {
     "@eslint/js": "^9.11.1",

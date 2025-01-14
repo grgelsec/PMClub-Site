@@ -1,26 +1,25 @@
 export const LandingPage = () => {
   return (
     <>
-      <header className="absolute w-full py-2 px-4 md:px-6 lg:px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between w-full">
-          <div className="w-full sm:w-1/2 flex justify-center sm:justify-start mb-4 sm:mb-0">
-            <div className="w-1/2 sm:w-auto">
+      <header className="top-0 w-full py-2 px-4 md:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+            <div className="flex justify-center sm:justify-start w-full sm:w-auto">
               <img
-                className="w-24 sm:w-28 lg:w-32 transition-transform duration-300 hover:scale-105"
+                className="w-20 sm:w-24 lg:w-28 transition-transform duration-300 hover:scale-105"
                 src="src/assets/pmcLogo.png"
                 alt="PMC Logo"
               />
             </div>
-          </div>
-          <div className="w-full sm:w-auto">
-            <div className="flex flex-row justify-center sm:justify-end space-x-4 md:space-x-6">
-              <button className="flex bg-lavender px-4 sm:px-6 md:px-8 lg:px-10 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 items-center">
-                <span className="font-bold text-white text-sm md:text-base">
+
+            <div className="flex flex-row justify-center space-x-4 w-full sm:w-auto">
+              <button className="flex items-center bg-lavender px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                <span className="font-bold text-white text-sm sm:text-base">
                   Join
                 </span>
               </button>
-              <button className="flex bg-orange-300 px-4 sm:px-6 md:px-8 lg:px-10 py-4 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
-                <span className="font-bold text-white text-sm md:text-base">
+              <button className="flex items-center bg-orange-300 px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+                <span className="font-bold text-white text-sm sm:text-base">
                   Contact
                 </span>
               </button>
@@ -29,7 +28,7 @@ export const LandingPage = () => {
         </div>
       </header>
 
-      <div className="flex min-h-screen items-center justify-center flex-col p-4 sm:p-8 md:p-16 lg:p-24 mt-14 sm:mt-16 md:mt-20">
+      <div className="flex min-h-screen items-center justify-center flex-col p-4 sm:p-8 md:p-16 lg:p-24 mt- sm:mt-16 md:mt-20">
         <div className="flex items-center justify-center w-full h-full min-h-[calc(100vh-8rem)] shadow-xl rounded-xl p-2 sm:p-4 bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5]">
           <div className="container mx-auto rounded-xl py-6 sm:py-8 md:py-10 px-4">
             <div className="flex justify-center items-center flex-col">
@@ -43,6 +42,22 @@ export const LandingPage = () => {
                   "THIS IS A SLOGAN, THIS AREA WILL BE TAKEN UP BY A CATCHY
                   SLOGAN. THIS IS WHERE THE SLOGAN GOES."
                 </h2>
+              </div>
+              <div className="flex w-1/3 mt-28 animate-bounce justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  strokeWidth={1.5}
+                  stroke="currentColor"
+                  className="size-6 lg:size-10"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+                  />
+                </svg>
               </div>
             </div>
           </div>

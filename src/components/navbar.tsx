@@ -1,7 +1,7 @@
 export const ButtonBar = () => {
   return (
     <>
-      <div className="flex flex-wrap row px-6 py-2 bg-lavender rounded-xl hover:scale-105 transition-transform duration-300 ring-2 ring-white">
+      <div className="flex flex-wrap row px-6 py-2 bg-[#c7a1fc] rounded-xl hover:scale-105 transition-transform duration-300  ring-white">
         <ul className="flex row space-x-3">
           <button
             id="landing"

@@ -3,6 +3,19 @@ import { ButtonBar } from "../components/navbar";
 import { LandingPage } from "./landing";
 import { AboutPage } from "./about";
 import { InterestPage } from "./application";
+import EventsPage from "./events";
+import {
+  Animator,
+  batch,
+  Fade,
+  FadeIn,
+  MoveOut,
+  ScrollContainer,
+  ScrollPage,
+  Sticky,
+  StickyIn,
+  ZoomIn,
+} from "react-scroll-motion";
 
 export const SinglePage = () => {
   const [showButtons, setShowButtons] = useState(false);
@@ -20,6 +33,8 @@ export const SinglePage = () => {
     return window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const ZoomInScrollOut = batch(StickyIn(), FadeIn(), ZoomIn());
+
   return (
     <div className="flex flex-col">
       <div
@@ -29,9 +44,20 @@ export const SinglePage = () => {
           <ButtonBar />
         </div>
       </div>
-      <LandingPage />
-      <AboutPage />
-      <InterestPage />
+      <ScrollContainer>
+        <ScrollPage>
+          <Animator animation={batch()}>
+            <LandingPage />
+          </Animator>
+        </ScrollPage>
+        <ScrollPage>
+          <Animator animation={batch()}>
+            <AboutPage />
+          </Animator>
+        </ScrollPage>
+        <EventsPage />
+        <InterestPage />
+      </ScrollContainer>
     </div>
   );
 };
