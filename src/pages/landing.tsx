@@ -1,8 +1,8 @@
 export const LandingPage = () => {
   return (
     <>
-      <header className="w-full py-2 px-4 md:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <header className="w-full py-2 px-4 md:px-6 lg:px-1 mt-5">
+        <div className="max-w-8xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
             <div className="flex justify-center sm:justify-start w-full sm:w-auto">
               <img
@@ -28,7 +28,7 @@ export const LandingPage = () => {
         </div>
       </header>
 
-      <div className="flex min-h-screen items-center justify-center flex-col p-4 sm:p-6 md:p-8 lg:p-12 mt-10">
+      <div className="flex min-h-screen items-center justify-center flex-col p-4 sm:p-6 md:p-8 lg:p-12">
         <div className="flex items-center justify-center w-full h-full min-h-[calc(100vh-4rem)] shadow-xl rounded-xl p-2 sm:p-4 bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5]">
           <div className="container mx-auto rounded-xl py-6 sm:py-8 md:py-10 px-4">
             <div className="flex justify-center items-center flex-col">
