@@ -1,7 +1,8 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { ButtonBar } from "../components/navbar";
 import { LandingPage } from "./landing";
 import { AboutPage } from "./about";
+import { InterestPage } from "./application";
 
 export const SinglePage = () => {
   const [showButtons, setShowButtons] = useState(false);
@@ -28,9 +29,9 @@ export const SinglePage = () => {
           <ButtonBar />
         </div>
       </div>
-
       <LandingPage />
       <AboutPage />
+      <InterestPage />
     </div>
   );
 };
