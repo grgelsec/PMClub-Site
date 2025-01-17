@@ -1,6 +1,6 @@
 export const AboutPage = () => {
   return (
-    <div className="min-h-screen w-full p-4 md:p-8 lg:p-24">
+    <div className="min-h-screen w-full p-4 md:p-8 lg:p-24" id="about">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 h-full">
         <div className="h-full">
           <div

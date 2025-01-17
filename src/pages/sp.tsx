@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { ButtonBar } from "../components/navbar";
 import { LandingPage } from "./landing";
 import { AboutPage } from "./about";
@@ -6,27 +5,10 @@ import { InterestPage } from "./application";
 import EventsPage from "./events";
 
 export const SinglePage = () => {
-  const [showButtons, setShowButtons] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setShowButtons(true);
-      } else {
-        setShowButtons(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div className="flex flex-col">
-      <div
-        className={`fixed bottom-0 w-full ${showButtons ? `hidden` : `block`}`}
-      >
-        <div className="flex w-1/3 pb-12 mx-auto justify-center">
+    <div className="flex flex-col z-50">
+      <div className={`fixed bottom-0 w-full z-50`}>
+        <div className="flex w-1/3 pb-12 mx-auto justify-center z-50">
           <ButtonBar />
         </div>
       </div>

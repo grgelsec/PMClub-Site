@@ -1,7 +1,7 @@
 export const LandingPage = () => {
   return (
     <>
-      <header className="w-full py-2 px-4 md:px-6 lg:px-1 mt-5">
+      <header id="hero" className="w-full py-2 px-4 md:px-6 lg:px-1 mt-5">
         <div className="max-w-8xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
             <div className="flex justify-center sm:justify-start w-full sm:w-auto">
@@ -13,7 +13,7 @@ export const LandingPage = () => {
             </div>
 
             <div className="flex flex-row justify-center space-x-4 w-full sm:w-auto">
-              <button className="flex items-center bg-lavender px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+              <button className="flex items-center bg-[#c7a1fc] bg- px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                 <span className="font-bold text-white text-sm sm:text-base">
                   Join
                 </span>

@@ -1,6 +1,6 @@
 export const InterestPage = () => {
   return (
-    <div className="min-h-screen w-full p-24">
+    <div id="board" className="min-h-screen w-full p-24">
       <div className="w-full min-h-screen p-2 sm:p-4 bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl">
         <main className="h-full w-full p-4 sm:p-6 md:p-8 lg:p-24 bg-white rounded-xl">
           <div className="flex flex-col items-center max-w-7xl mx-auto">
@@ -23,7 +23,7 @@ export const InterestPage = () => {
                   className="bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] p-[2px] rounded-xl hover:scale-105 transition-all duration-300"
                 >
                   <div className="bg-white p-6 sm:p-8 md:p-12 rounded-xl h-full flex flex-col justify-center items-center">
-                    <div className="font-bold text-lg md:text-xl text-center bg-gradient-to-r from-[#D5B8FF] to-[#98FFD6] bg-clip-text text-transparent">
+                    <div className="font-bold text-lg md:text-xl text-center text-black">
                       {position.name}
                     </div>
                     <div className="text-gray-600 mt-2 text-center">
@@ -50,7 +50,7 @@ export const InterestPage = () => {
                   className="bg-gradient-to-br from-[#FFD6A5] via-[#98FFD6] to-[#D5B8FF] p-[2px] rounded-xl hover:scale-105 transition-all duration-300"
                 >
                   <div className="bg-white p-6 sm:p-8 md:p-12 rounded-xl h-full flex flex-col justify-center items-center">
-                    <div className="font-bold text-lg md:text-xl text-center bg-gradient-to-r from-[#FFD6A5] to-[#98FFD6] bg-clip-text text-transparent">
+                    <div className="font-bold text-lg md:text-xl text-center text-black">
                       {position.name}
                     </div>
                     <div className="text-gray-600 mt-2 text-center">
