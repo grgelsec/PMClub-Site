@@ -16,7 +16,7 @@ export const InterestPage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-8">
               {[
                 { role: "Co-President", name: "Shreyas Menon" },
-                { role: "Co-President", name: "Makaael Kazmi" },
+                { role: "Co-President", name: "Mekaael Kazmi" },
                 { role: "Vice President", name: "Tanya Kalale" },
                 { role: "Director of Marketing", name: "Roxanne Sabel" },
                 { role: "Director of Finance", name: "Reid Zona" },
