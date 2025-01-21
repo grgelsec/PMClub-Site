@@ -7,7 +7,7 @@ export const LandingPage = () => {
             <div className="flex justify-center sm:justify-start w-full sm:w-auto">
               <img
                 className="w-20 sm:w-24 lg:w-28 transition-transform duration-300 hover:scale-105"
-                src={`src/assets/pmcLogo.png`}
+                src={`public/assets/pmcLogo.png`}
                 alt="PMC Logo"
               />
             </div>
