@@ -99,11 +99,11 @@ export const AboutPage = () => {
           </div>
 
           <div className="rounded-xl shadow-2xl bg-white/80 p-4 ring-4 ring-green-300 flex flex-col justify-between h-full">
-            <div className="text-[#91fdd2] text-2xl md:text-3xl font-bold text-center">
+            <div className="text-[#36ffae] text-2xl md:text-3xl font-bold text-center">
               <h1>JOIN SLACK</h1>
             </div>
             <div className="flex justify-center flex-grow items-center">
-              <button className="w-32 md:w-40 p-4 lg:p-8 rounded-xl bg-[#91fdd2] flex justify-center hover:shadow-xl hover:-translate-y-0.5 duration-300">
+              <button className="w-32 md:w-40 p-4 lg:p-8 rounded-xl bg-[#36ffae] flex justify-center hover:shadow-xl hover:-translate-y-0.5 duration-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
