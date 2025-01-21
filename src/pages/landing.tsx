@@ -18,7 +18,7 @@ export const LandingPage = () => {
                   Join
                 </span>
               </button>
-              <button className="flex items-center bg-orange-300 px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+              <button className="flex items-center bg-[#c7a1fc] px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
                 <span className="font-bold text-white text-sm sm:text-base">
                   Contact
                 </span>

@@ -2,7 +2,7 @@ export const InterestPage = () => {
   return (
     <div id="board" className="min-h-screen w-full p-24">
       <div className="flex w-full justify-center hover:scale-105 duration-300">
-        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl w-full md:w-1/2 lg:w-1/3 bg-white mb-14 p-2 shadow-xl">
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#D5B8FF] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 mb-14 p-2 shadow-xl">
           EXECUTIVES
         </h1>
       </div>

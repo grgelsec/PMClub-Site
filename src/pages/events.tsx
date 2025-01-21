@@ -3,14 +3,14 @@ export const EventsPage = () => {
     <div id="events" className="h-3/4 w-full p-4 sm:p-6 md:p-8 lg:p-24">
       <div className="w-full p-2 bg-gradient-to-br white rounded-xl ">
         <div className="flex w-full justify-center hover:scale-105 duration-300">
-          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl w-full md:w-1/2 lg:w-1/3 bg-white  p-2 shadow-xl">
+          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#D5B8FF] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 mb-14 p-2 shadow-xl">
             EVENTS
           </h1>
         </div>
 
         <main className="flex flex-col gap-6 w-full p-4 sm:p-6 md:p-8 lg:p-12 rounded-xl">
           <h2 className=" w-full flex justify-start p-2">
-            <span className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent hover:scale-105 duration-300">
+            <span className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#D5B8FF] hover:scale-105 duration-300">
               UPCOMING
             </span>
           </h2>
@@ -61,7 +61,7 @@ export const EventsPage = () => {
           </div>
 
           <h2 className=" w-full flex justify-start p-2 mt-8">
-            <span className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent hover:scale-105 duration-300">
+            <span className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#D5B8FF] hover:scale-105 duration-300">
               PAST
             </span>
           </h2>
