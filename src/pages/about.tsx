@@ -1,6 +1,11 @@
 export const AboutPage = () => {
   return (
     <div className="min-h-screen w-full p-4 md:p-8 lg:p-24" id="about">
+      <div className="flex w-full justify-center hover:scale-105 duration-300">
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl w-full md:w-1/2 lg:w-1/3 bg-white mb-14 p-2 shadow-xl">
+          INFO
+        </h1>
+      </div>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 h-full">
         <div className="h-full">
           <div
@@ -94,11 +99,11 @@ export const AboutPage = () => {
           </div>
 
           <div className="rounded-xl shadow-2xl bg-white/80 p-4 ring-4 ring-green-300 flex flex-col justify-between h-full">
-            <div className="text-[#98FFD6] text-2xl md:text-3xl font-bold text-center">
-              <h1>JOIN</h1>
+            <div className="text-[#91fdd2] text-2xl md:text-3xl font-bold text-center">
+              <h1>JOIN SLACK</h1>
             </div>
             <div className="flex justify-center flex-grow items-center">
-              <button className="w-32 md:w-40 p-4 lg:p-8 rounded-xl bg-green-300 flex justify-center hover:shadow-xl hover:-translate-y-0.5 duration-300">
+              <button className="w-32 md:w-40 p-4 lg:p-8 rounded-xl bg-[#91fdd2] flex justify-center hover:shadow-xl hover:-translate-y-0.5 duration-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
