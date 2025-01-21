@@ -31,7 +31,7 @@ export const AboutPage = () => {
             <div className="lg:h-1/3 my-10 flex justify-center items-center">
               <img
                 className="h-full w-auto rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-300 object-contain"
-                src={`public/assets/PM Club (1).png`}
+                src={`/assets/PM Club (1).png`}
                 alt="Product Management Club"
               />
             </div>
