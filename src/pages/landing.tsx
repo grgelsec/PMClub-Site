@@ -1,7 +1,7 @@
 export const LandingPage = () => {
   return (
     <>
-      <header id="hero" className="w-full py-2 px-4 md:px-6 lg:px-1 mt-5">
+      <header id="hero" className="w-full py-2 px-4 md:px-6 lg:px-1">
         <div className="max-w-8xl mx-auto px-6">
           <div className="flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
             <div className="flex justify-center sm:justify-start w-full sm:w-auto">
