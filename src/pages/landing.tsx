@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const LandingPage = () => {
   return (
     <>
@@ -55,23 +57,13 @@ export const LandingPage = () => {
                 <h2 className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-white text-center transition-transform hover:scale-103 duration-300 before:animate-typewritter font-mono after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black w-full sm:w-4/5 md:w-3/4 lg:w-2/3 shadow-md rounded-xl ring-2 ring-white p-4">
                   "TECHNOLOGY IS MORE THAN CODING"
                 </h2>
-              </div>
-              {/* <div className="flex w-1/3 mt-28 animate-bounce justify-center">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="size-6 lg:size-10"
+                <Link
+                  to={`https://forms.gle/rwXoyybpenYsGCTX7`}
+                  className="flex items-center justify-center absolute w-1/4 lg:w-1/6 ring-2 p-6 mt-24 rounded-xl ring-white font-bold text-2xl hover:bg-white/70 duration-300"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="m9 12.75 3 3m0 0 3-3m-3 3v-7.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-                  />
-                </svg>
-              </div> */}
+                  JOIN
+                </Link>
+              </div>
             </div>
           </div>
         </div>
