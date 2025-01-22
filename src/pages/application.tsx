@@ -1,8 +1,10 @@
+import { Link } from "react-router-dom";
+
 export const InterestPage = () => {
   return (
-    <div id="board" className="min-h-screen w-full p-8 lg:p-24">
+    <div id="board" className="min-h-screen w-full p-8 lg:p-24 mb-16">
       <div className="flex w-full justify-center hover:scale-105 duration-300">
-        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#D5B8FF] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 mb-14 p-2 shadow-xl">
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#c7a1fc] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 mb-14 p-2 shadow-xl">
           EXECUTIVES
         </h1>
       </div>
@@ -15,15 +17,44 @@ export const InterestPage = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-8">
               {[
-                { role: "Co-President", name: "Shreyas Menon" },
-                { role: "Co-President", name: "Mekaael Kazmi" },
-                { role: "Vice President", name: "Tanya Kalale" },
-                { role: "Director of Marketing", name: "Roxanne Sabel" },
-                { role: "Director of Finance", name: "Reid Zona" },
-                { role: "Director of External Outreach", name: "Isabelle U." },
-                { role: "Director of Technology", name: "George Lisec" },
+                {
+                  role: "Co-President",
+                  name: "Shreyas Menon",
+                  linkedin: `https://www.linkedin.com/in/menon-shreyas/`,
+                },
+                {
+                  role: "Co-President",
+                  name: "Mekaael Kazmi",
+                  linkedin: `https://www.linkedin.com/in/mekaaelkazmi/`,
+                },
+                {
+                  role: "Vice President",
+                  name: "Tanya Kalale",
+                  linkedin: `https://www.linkedin.com/in/tanya-kalale/`,
+                },
+                {
+                  role: "Director of Marketing",
+                  name: "Roxanne Sabel",
+                  linkedin: `https://www.linkedin.com/in/roxannesabel/`,
+                },
+                {
+                  role: "Director of Finance",
+                  name: "Reid Zona",
+                  linkedin: `https://www.linkedin.com/in/reidzona/`,
+                },
+                {
+                  role: "Director of External Outreach",
+                  name: "Isabelle U.",
+                  linkedin: `https://www.linkedin.com/in/isabelleuthuppan/`,
+                },
+                {
+                  role: "Director of Technology",
+                  name: "George Lisec",
+                  linkedin: `https://www.linkedin.com/in/grgelsec/`,
+                },
               ].map((position, index) => (
-                <div
+                <Link
+                  to={`${position.linkedin}`}
                   key={index}
                   className="bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] p-[2px] rounded-xl hover:scale-105 transition-all duration-300"
                 >
@@ -35,7 +66,7 @@ export const InterestPage = () => {
                       {position.role}
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
@@ -45,12 +76,25 @@ export const InterestPage = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 w-full mt-8">
               {[
-                { name: "Ale Gotanco" },
-                { name: "Ria Kudapa" },
-                { name: "Angelina Lukose" },
-                { name: "Jason Tang" },
+                {
+                  name: "Ale Gotanco",
+                  linkedin: `https://www.linkedin.com/in/alejandrorgotanco/`,
+                },
+                {
+                  name: "Ria Kudapa",
+                  linkedin: `https://www.linkedin.com/in/ria-kudapa/`,
+                },
+                {
+                  name: "Angelina Lukose",
+                  linkedin: `https://www.linkedin.com/in/angelina-lukose/`,
+                },
+                {
+                  name: "Jason Tang",
+                  linkedin: `https://www.linkedin.com/in/jasontangg/`,
+                },
               ].map((position, index) => (
-                <div
+                <Link
+                  to={`${position.linkedin}`}
                   key={index}
                   className="bg-gradient-to-br from-[#FFD6A5] via-[#98FFD6] to-[#D5B8FF] p-[2px] rounded-xl hover:scale-105 transition-all duration-300"
                 >
@@ -62,7 +106,7 @@ export const InterestPage = () => {
                       Committee Member
                     </div>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>

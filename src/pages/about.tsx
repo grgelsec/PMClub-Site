@@ -2,7 +2,7 @@ export const AboutPage = () => {
   return (
     <div className="min-h-screen w-full p-4 md:p-8 lg:p-24" id="about">
       <div className="flex w-full justify-center hover:scale-105 duration-300">
-        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#D5B8FF] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 mb-14 p-2 shadow-xl">
+        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#c7a1fc] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 mb-14 p-2 shadow-xl">
           INFO
         </h1>
       </div>
@@ -80,6 +80,7 @@ export const AboutPage = () => {
                   { title: "Design Thinking Workshop", date: "April 5" },
                   { title: "Networking Night", date: "April 12" },
                 ].map((event, index) => (
+                  // Need to add link to slack
                   <div
                     key={index}
                     className="p-4 lg:p-6  rounded-xl bg-orange-300 cursor-pointer hover:shadow-xl hover:-translate-y-0.5 duration-300"

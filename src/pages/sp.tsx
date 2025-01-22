@@ -3,6 +3,8 @@ import { LandingPage } from "./landing";
 import { AboutPage } from "./about";
 import { InterestPage } from "./application";
 import EventsPage from "./events";
+import { JoinPage } from "./join";
+import { FooterPage } from "./footer";
 
 export const SinglePage = () => {
   return (
@@ -16,6 +18,8 @@ export const SinglePage = () => {
       <AboutPage />
       <EventsPage />
       <InterestPage />
+      <JoinPage />
+      <FooterPage />
     </div>
   );
 };

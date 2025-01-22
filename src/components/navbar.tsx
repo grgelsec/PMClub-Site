@@ -1,7 +1,7 @@
 export const ButtonBar = () => {
   return (
     <>
-      <div className="flex flex-wrap row px-6 py-2 bg-[#c7a1fc] rounded-xl hover:scale-105 transition-transform duration-300  ring-white z-50">
+      <div className="flex flex-wrap row px-6 py-2 bg-[#c7a1fc] rounded-xl hover:scale-105 transition-transform duration-300  ring-white z-50 ring-2">
         <ul className="flex row space-x-3">
           <button
             onClick={() =>
@@ -102,6 +102,11 @@ export const ButtonBar = () => {
           <button
             id="application"
             className="p-2 hover:opacity-50 focus:ring-2 rounded-xl focus:ring-white focus:bg-indigo-300 hover:scale-110 transition-transform duration-300"
+            onClick={() =>
+              document
+                .getElementById("interested")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"

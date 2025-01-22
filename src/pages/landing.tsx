@@ -13,12 +13,26 @@ export const LandingPage = () => {
             </div>
 
             <div className="flex flex-row justify-center space-x-4 w-full sm:w-auto">
-              <button className="flex items-center bg-[#c7a1fc] bg- px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("interested")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="flex items-center bg-[#c7a1fc] px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              >
                 <span className="font-bold text-white text-sm sm:text-base">
                   Join
                 </span>
               </button>
-              <button className="flex items-center bg-[#c7a1fc] px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5">
+              <button
+                onClick={() =>
+                  document
+                    .getElementById("footer")
+                    ?.scrollIntoView({ behavior: "smooth" })
+                }
+                className="flex items-center bg-[#c7a1fc] px-6 sm:px-8 py-2 sm:py-3 rounded-xl transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5"
+              >
                 <span className="font-bold text-white text-sm sm:text-base">
                   Contact
                 </span>
