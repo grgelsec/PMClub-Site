@@ -17,23 +17,23 @@ export const EventsPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fot-bold">
             {[
               {
-                eventTitle: "Test Event Name",
+                eventTitle: "PMC Meeting",
                 description:
                   "Join us for an interactive session on product strategy fundamentals. Learn from industry experts and network with fellow product enthusiasts.",
-                location: "test location",
-                time: "test time",
+                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+                time: "Jan 28th, 2025 | 7PM",
               },
               {
-                eventTitle: "Test Event Name",
-                description: "This is a test description for the test event",
-                location: "test location",
-                time: "test time",
+                eventTitle: "PMC Meeting",
+                description: "Coming soon",
+                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+                time: "Feb 4th, 2025 | 7PM",
               },
               {
-                eventTitle: "Test Event Name",
-                description: "This is a test description for the test event",
-                location: "test location",
-                time: "test time",
+                eventTitle: "PMC Meeting",
+                description: "Coming soon",
+                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+                time: "Feb 11th, 2025 | 7PM",
               },
             ].map((event, index) => (
               <div
@@ -47,7 +47,7 @@ export const EventsPage = () => {
                   <p className="flex-grow mt-4 text-sm sm:text-base text-black overflow-auto">
                     {event.description}
                   </p>
-                  <footer className="flex justify-between items-center mt-4 px-2">
+                  <footer className="flex justify-between items-center mt-4 px-2 space-x-4">
                     <p className="text-sm sm:text-base text-black">
                       {event.location}
                     </p>
@@ -68,23 +68,25 @@ export const EventsPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                eventTitle: "Test Event Name",
+                eventTitle: "Product Roadmapping",
                 description:
-                  "Join us for an interactive session on product strategy fundamentals. Learn from industry experts and network with fellow product enthusiasts.",
-                location: "test location",
-                time: "test time",
+                  "Learn about how to outline the vision, direction, and progress of a product!",
+                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+                time: "Nov 12th, 2024 | 7PM",
               },
               {
-                eventTitle: "Test Event Name",
-                description: "This is a test description for the test event",
-                location: "test location",
-                time: "test time",
+                eventTitle: "SDL and Tech Basics",
+                description:
+                  "Informative session on tech basics needed for PMs to thrive when working with engineers. Learn from our Director of Technology with a special keynote aimed towards key concepts and terms!",
+                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+                time: "Oct 29th, 2024 | 7PM",
               },
               {
-                eventTitle: "Test Event Name",
-                description: "This is a test description for the test event",
-                location: "test location",
-                time: "test time",
+                eventTitle: "Navigating the Product World",
+                description:
+                  "Join us for a keynote on how to create/find PM opportunities and how to succeed in the product world!",
+                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+                time: "Sept 1st, 2024 | 7PM",
               },
             ].map((event, index) => (
               <div
@@ -98,7 +100,7 @@ export const EventsPage = () => {
                   <p className="flex-grow mt-4 text-sm sm:text-base text-black overflow-auto">
                     {event.description}
                   </p>
-                  <footer className="flex justify-between items-center mt-4 px-2">
+                  <footer className="flex justify-between items-center mt-4 px-2 space-x-4">
                     <p className="text-sm sm:text-base text-black">
                       {event.location}
                     </p>

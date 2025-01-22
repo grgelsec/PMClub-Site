@@ -61,28 +61,27 @@ export const AboutPage = () => {
             <div className="flex flex-col lg:flex-row gap-4 h-[calc(100%-4rem)]">
               <div className="w-full lg:w-1/2 rounded-xl p-4 bg-orange-300 flex flex-col">
                 <div className="text-white font-bold text-lg mb-2 lg:text-xl">
-                  Product Strategy Workshop
+                  2025 First Meeting!
                 </div>
 
                 <p className="text-white text-sm md:text-base flex-grow lg:text-xl">
-                  Join us for an interactive session on product strategy
-                  fundamentals. Learn from industry experts and network with
-                  fellow product enthusiasts.
+                  Join us for our first session of the Spring 2025 semester. Get
+                  an overview of the club and learn about events going on this
+                  semester!
                 </p>
 
                 <div className="flex justify-between items-center text-sm text-white mt-2 lg:text-md">
-                  <span>Hodge Hall 100</span>
-                  <span className="font-medium">March 15, 2024</span>
+                  <span>Shoemaker Innovaion Center</span>
+                  <span className="font-medium">Jan 28th, 2025</span>
                 </div>
               </div>
               <div className="w-full lg:w-1/2 flex flex-col justify-between gap-2 lg:border-l border-[#FFD6A5]/30 lg:pl-4">
                 {[
-                  { title: "PM Interview Prep", date: "March 22" },
-                  { title: "Tech PM Panel", date: "March 29" },
-                  { title: "Design Thinking Workshop", date: "April 5" },
-                  { title: "Networking Night", date: "April 12" },
+                  { title: "PMC Meeting", date: "Feb 4th, 7PM" },
+                  { title: "PMC Meeting", date: "Feb 11th, 7PM" },
+                  { title: "PMC Meeting", date: "Feb 18th, 7PM" },
+                  { title: "PMC Meeting", date: "Feb 25th, 7PM" },
                 ].map((event, index) => (
-                  // Need to add link to slack
                   <div
                     key={index}
                     className="p-4 lg:p-6  rounded-xl bg-orange-300 cursor-pointer hover:shadow-xl hover:-translate-y-0.5 duration-300"
