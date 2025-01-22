@@ -20,7 +20,7 @@ export const AboutPage = () => {
               </h1>
             </div>
 
-            <div className="h-1/4 w-full text-white text-sm md:text-xl py-6 px-2 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl">
+            <div className="h-1/4 w-full text-white text-sm md:text-xl py-6 px-2 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl sm:text-xl">
               At Product Management Club, we bridge the gap between innovation
               and execution. Our community brings together aspiring product
               managers, designers, and tech enthusiasts to learn, collaborate,
@@ -30,7 +30,7 @@ export const AboutPage = () => {
               the dynamic field of product management.
             </div>
 
-            <div className="lg:h-1/3 my-10 flex justify-center items-center">
+            <div className="lg:h-1/3 sm:h-2/6 my-10 flex justify-center items-center">
               <img
                 className="h-full w-auto rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-300 object-contain"
                 src={`/assets/PM Club (1).png`}
@@ -38,7 +38,7 @@ export const AboutPage = () => {
               />
             </div>
 
-            <div className="h-1/4 w-full text-white text-sm md:text-xl p-2 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl">
+            <div className="h-1/4 w-full text-white text-sm md:text-xl p-2 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl sm:text-xl">
               We offer hands-on workshops, networking events, and real-world
               project experiences that prepare our members for successful
               careers in product management. Join us to develop your skills,
