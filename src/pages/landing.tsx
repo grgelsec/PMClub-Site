@@ -59,7 +59,7 @@ export const LandingPage = () => {
                 </h2>
                 <Link
                   to={`https://forms.gle/rwXoyybpenYsGCTX7`}
-                  className="flex items-center justify-center absolute w-1/4 lg:w-1/6 ring-2 p-6 sm:mt-28 mt-24 rounded-xl ring-white font-bold text-2xl hover:bg-white/70 duration-300"
+                  className="flex items-center justify-center absolute w-1/4 lg:w-1/6 ring-2 p-6 mt-28 sm:mt-24 rounded-xl ring-white font-bold text-2xl hover:bg-white/70 duration-300"
                 >
                   JOIN
                 </Link>
