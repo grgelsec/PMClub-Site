@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const JoinPage = () => {
   return (
     <>
@@ -12,7 +14,10 @@ export const JoinPage = () => {
             </h1>
           </div>
           <div className="flex w-full ">
-            <button className="flex w-full justify-center ring p-8 rounded-xl ring-white hover:bg-[#ccadf9] duration-300">
+            <Link
+              to={`https://forms.gle/rwXoyybpenYsGCTX7`}
+              className="flex w-full justify-center ring p-8 rounded-xl ring-white hover:bg-[#ccadf9] duration-300"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -27,7 +32,7 @@ export const JoinPage = () => {
                   d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
                 />
               </svg>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
