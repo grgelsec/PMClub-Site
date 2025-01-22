@@ -29,7 +29,7 @@ export const LandingPage = () => {
       </header>
 
       <div className="flex min-h-screen items-center justify-center flex-col p-4 sm:p-6 md:p-8 lg:p-12">
-        <div className="flex items-center justify-center w-full h-full min-h-[calc(100vh-4rem)] shadow-xl rounded-xl p-2 sm:p-4 bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5]">
+        <div className="flex items-center justify-center w-full h-full min-h-[calc(100vh-4rem)] shadow-xl rounded-xl p-2 sm:p-4 bg-gradient-to-br from-[#cca7ff] via-[#6efac2] to-[#f5c386]">
           <div className="container mx-auto rounded-xl py-6 sm:py-8 md:py-10 px-4">
             <div className="flex justify-center items-center flex-col">
               <div className="bg-[#ffffffe0] shadow-xl p-3 sm:p-4 md:p-6 rounded-xl transition-transform hover:scale-105 duration-300 w-full max-w-3xl mx-4">
@@ -37,8 +37,8 @@ export const LandingPage = () => {
                   PRODUCT MANAGEMENT CLUB
                 </h1>
               </div>
-              <div className="w-full flex justify-center mt-4 sm:mt-6 md:mt-8">
-                <h2 className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-white text-center transition-transform hover:scale-103 duration-300 before:animate-typewritter font-mono after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black w-full sm:w-4/5 md:w-3/4 lg:w-2/3 px-4">
+              <div className="w-3/4 flex justify-center mt-4 sm:mt-6 md:mt-8 \">
+                <h2 className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-white text-center transition-transform hover:scale-103 duration-300 before:animate-typewritter font-mono after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black w-full sm:w-4/5 md:w-3/4 lg:w-2/3 shadow-md rounded-xl ring-2 ring-white p-4">
                   "THIS IS A SLOGAN, THIS AREA WILL BE TAKEN UP BY A CATCHY
                   SLOGAN. THIS IS WHERE THE SLOGAN GOES."
                 </h2>

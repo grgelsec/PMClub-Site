@@ -18,7 +18,7 @@ export const AboutPage = () => {
               </h1>
             </div>
 
-            <div className="h-1/4 w-full text-white text-sm md:text-xl p-4 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl">
+            <div className="h-1/4 w-full text-white text-sm md:text-xl py-6 px-2 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl">
               At Product Management Club, we bridge the gap between innovation
               and execution. Our community brings together aspiring product
               managers, designers, and tech enthusiasts to learn, collaborate,
@@ -36,7 +36,7 @@ export const AboutPage = () => {
               />
             </div>
 
-            <div className="h-1/4 w-full text-white text-sm md:text-xl p-4 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl">
+            <div className="h-1/4 w-full text-white text-sm md:text-xl p-2 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl">
               We offer hands-on workshops, networking events, and real-world
               project experiences that prepare our members for successful
               careers in product management. Join us to develop your skills,
