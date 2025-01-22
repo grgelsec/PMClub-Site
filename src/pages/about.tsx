@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export const AboutPage = () => {
   return (
     <div className="min-h-screen w-full p-4 md:p-8 lg:p-24" id="about">
@@ -104,7 +106,10 @@ export const AboutPage = () => {
               <h1>JOIN SLACK</h1>
             </div>
             <div className="flex justify-center flex-grow items-center">
-              <button className="w-32 md:w-40 p-4 lg:p-8 rounded-xl bg-[#36ffae] flex justify-center hover:shadow-xl hover:-translate-y-0.5 duration-300">
+              <Link
+                to={`https://join.slack.com/t/productmanage-tps7335/shared_invite/zt-2ybtg0oqc-OrB3KqjS11tgdRwSuaxJNg`}
+                className="w-32 md:w-40 p-4 lg:p-8 rounded-xl bg-[#36ffae] flex justify-center hover:shadow-xl hover:-translate-y-0.5 duration-300"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -119,7 +124,7 @@ export const AboutPage = () => {
                     d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
                   />
                 </svg>
-              </button>
+              </Link>
             </div>
           </div>
         </div>
