@@ -53,8 +53,7 @@ export const LandingPage = () => {
               </div>
               <div className="w-3/4 flex justify-center mt-4 sm:mt-6 md:mt-8 \">
                 <h2 className="font-bold text-base sm:text-lg md:text-xl lg:text-2xl text-white text-center transition-transform hover:scale-103 duration-300 before:animate-typewritter font-mono after:absolute after:inset-0 after:w-[0.125em] after:animate-caret after:bg-black w-full sm:w-4/5 md:w-3/4 lg:w-2/3 shadow-md rounded-xl ring-2 ring-white p-4">
-                  "THIS IS A SLOGAN, THIS AREA WILL BE TAKEN UP BY A CATCHY
-                  SLOGAN. THIS IS WHERE THE SLOGAN GOES."
+                  "TECHNOLOGY IS MORE THAN CODING"
                 </h2>
               </div>
               {/* <div className="flex w-1/3 mt-28 animate-bounce justify-center">
