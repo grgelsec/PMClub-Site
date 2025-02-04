@@ -9,7 +9,7 @@ export const InterestPage = () => {
         </h1>
       </div>
       <div className="w-full min-h-screen p-2 sm:p-4 bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl">
-        <main className="h-full w-full p-4 sm:p-6 md:p-8 lg:p-24 bg-white rounded-xl">
+        <main className="min-h-screen w-full p-4 sm:p-6 md:p-8 lg:p-24 bg-white rounded-xl">
           <div className="flex flex-col items-center max-w-7xl mx-auto">
             <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-gradient-to-r from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] bg-clip-text text-transparent animate-gradient transition-transform hover:scale-105 duration-300 shadow-xl p-4 rounded-xl">
               BOARD
@@ -34,8 +34,8 @@ export const InterestPage = () => {
                 },
                 {
                   role: "Director of Marketing",
-                  name: "Roxanne Sabel",
-                  linkedin: `https://www.linkedin.com/in/roxannesabel/`,
+                  name: "Angelina Lukose",
+                  linkedin: `https://www.linkedin.com/in/angelina-lukose/`,
                 },
                 {
                   role: "Director of Finance",
@@ -83,10 +83,6 @@ export const InterestPage = () => {
                 {
                   name: "Ria Kudapa",
                   linkedin: `https://www.linkedin.com/in/ria-kudapa/`,
-                },
-                {
-                  name: "Angelina Lukose",
-                  linkedin: `https://www.linkedin.com/in/angelina-lukose/`,
                 },
                 {
                   name: "Jason Tang",

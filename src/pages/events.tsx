@@ -17,23 +17,25 @@ export const EventsPage = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fot-bold">
             {[
               {
-                eventTitle: "PMC Meeting",
+                eventTitle: "Resume/Recruiting | Product Design Activity",
                 description:
-                  "Join us for an interactive session on product strategy fundamentals. Learn from industry experts and network with fellow product enthusiasts.",
-                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-                time: "Jan 28th, 2025 | 7PM",
-              },
-              {
-                eventTitle: "PMC Meeting",
-                description: "Coming soon",
+                  "Join us for a resume/recruiting info session along with a product design activtiy!",
                 location: "Shoemaker Innovation Center, Luddy 2nd Floor",
                 time: "Feb 4th, 2025 | 7PM",
               },
               {
-                eventTitle: "PMC Meeting",
-                description: "Coming soon",
+                eventTitle: "MVP workshop with shoemaker scholars!",
+                description:
+                  "Come along for a special workshop with IU shoemaker scholars!",
                 location: "Shoemaker Innovation Center, Luddy 2nd Floor",
                 time: "Feb 11th, 2025 | 7PM",
+              },
+              {
+                eventTitle: "Big Tech Guest Speaker",
+                description:
+                  "Come sit in with us on a special talk from a guest speaker with big tech experience!",
+                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+                time: "Feb 18th, 2025 | 7PM",
               },
             ].map((event, index) => (
               <div

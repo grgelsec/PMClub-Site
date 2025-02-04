@@ -61,26 +61,28 @@ export const AboutPage = () => {
             <div className="flex flex-col lg:flex-row gap-4 h-[calc(100%-4rem)]">
               <div className="w-full lg:w-1/2 rounded-xl p-4 bg-orange-300 flex flex-col">
                 <div className="text-white font-bold text-lg mb-2 lg:text-xl">
-                  2025 First Meeting!
+                  Resume/Recruiting | Product Design Activity
                 </div>
 
                 <p className="text-white text-sm md:text-base flex-grow lg:text-xl">
-                  Join us for our first session of the Spring 2025 semester. Get
-                  an overview of the club and learn about events going on this
-                  semester!
+                  Join us for a resume/recruiting info session along with a
+                  product design activtiy!
                 </p>
 
                 <div className="flex justify-between items-center text-sm text-white mt-2 lg:text-md">
                   <span>Shoemaker Innovaion Center</span>
-                  <span className="font-medium">Jan 28th, 2025</span>
+                  <span className="font-medium">Feb 4th, 2025</span>
                 </div>
               </div>
               <div className="w-full lg:w-1/2 flex flex-col justify-between gap-2 lg:border-l border-[#FFD6A5]/30 lg:pl-4">
                 {[
-                  { title: "PMC Meeting", date: "Feb 4th, 7PM" },
-                  { title: "PMC Meeting", date: "Feb 11th, 7PM" },
-                  { title: "PMC Meeting", date: "Feb 18th, 7PM" },
+                  {
+                    title: "MVP workshop with shoemaker scholars",
+                    date: "Feb 11th, 7PM",
+                  },
+                  { title: "Big Tech Guest Speaker", date: "Feb 18th, 7PM" },
                   { title: "PMC Meeting", date: "Feb 25th, 7PM" },
+                  { title: "PMC Meeting", date: "March 4th, 7PM" },
                 ].map((event, index) => (
                   <div
                     key={index}
