@@ -95,7 +95,7 @@ export const InterestPage = () => {
                   className="bg-gradient-to-br from-[#FFD6A5] via-[#98FFD6] to-[#D5B8FF] p-[2px] rounded-xl hover:scale-105 transition-all duration-300"
                 >
                   <div className="bg-white p-6 sm:p-8 md:p-12 rounded-xl h-full flex flex-col justify-center items-center">
-                    <div className="font-bold text-lg md:text-xl text-center underline text-blue-500">
+                    <div className="font-bold text-lg md:text-xl text-center hover:text-black">
                       {position.name}
                     </div>
                     <div className="text-gray-600 mt-2 text-center">
