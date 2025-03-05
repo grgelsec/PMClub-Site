@@ -66,7 +66,7 @@ export const AboutPage = () => {
 
                 <p className="text-white text-sm md:text-base flex-grow lg:text-xl">
                   Join us for a resume/recruiting info session along with a
-                  product design activtiy!
+                  product design activity!
                 </p>
 
                 <div className="flex justify-between items-center text-sm text-white mt-2 lg:text-md">
