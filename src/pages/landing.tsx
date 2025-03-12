@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
-
+//Things that hover out seem clickable
+//Colors are bright
+//about logo should have a border
+//logo in the middle of the about is awkward 
+//a lot of white space around the slack button
+//move events up to the top of the website 
+//make the info more like an overview
+//links dont look like theyre clickable
 export const LandingPage = () => {
   return (
     <>
