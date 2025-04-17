@@ -2,7 +2,7 @@ export const EventsPage = () => {
   return (
     <div id="events" className="h-3/4 w-full p-4 sm:p-6 md:p-8 lg:p-24">
       <div className="w-full p-2 bg-gradient-to-br white rounded-xl ">
-        <div className="flex w-full justify-center hover:scale-105 duration-300">
+        <div className="flex w-full justify-center ">
           <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#c7a1fc] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 p-2 shadow-xl">
             EVENTS
           </h1>

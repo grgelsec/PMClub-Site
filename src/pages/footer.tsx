@@ -5,7 +5,7 @@ export const FooterPage = () => {
     <>
       <div
         id="footer"
-        className="flex flex-wrap justify-center items-start w-full bg-gradient-to-br from-[#cca7ff] via-[#6efac2] to-[#f5c386] pb-32"
+        className="flex flex-wrap justify-center items-start w-full bg-[#cca7ff] pb-32"
       >
         <div className="flex justify-center  w-1/3 mt-4 font-bold text-white flex-wrap gap-4">
           <Link

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export const AboutPage = () => {
   return (
     <div className="min-h-screen w-full p-4 md:p-8 lg:p-24" id="about">
-      <div className="flex w-full justify-center hover:scale-105 duration-300">
+      <div className="flex w-full justify-center ">
         <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#c7a1fc] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 mb-14 p-2 shadow-xl">
           INFO
         </h1>
@@ -20,7 +20,7 @@ export const AboutPage = () => {
               </h1>
             </div>
 
-            <div className="h-1/4 w-full text-white text-sm md:text-xl py-6 px-2 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl sm:text-xl">
+            <div className="h-1/4 w-full text-white text-sm md:text-xl py-6 px-2 md:p-6 lg:px-6 lg:py-2 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl sm:text-xl">
               At Product Management Club, we bridge the gap between innovation
               and execution. Our community brings together aspiring product
               managers, designers, and tech enthusiasts to learn, collaborate,
@@ -38,7 +38,7 @@ export const AboutPage = () => {
               />
             </div>
 
-            <div className="h-1/4 w-full text-white text-sm md:text-xl p-2 md:p-6 lg:p-6 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl sm:text-xl">
+            <div className="h-1/4 w-full text-white text-sm md:text-xl p-2 md:p-6 lg:px-6 lg:py-2 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl sm:text-xl">
               We offer hands-on workshops, networking events, and real-world
               project experiences that prepare our members for successful
               careers in product management. Join us to develop your skills,
