@@ -68,10 +68,7 @@ export const InterestPage = () => {
                       to={`${position.linkedin}`}
                       className="hover:scale-105 transition-all duration-300"
                     >
-                      <img
-                        className="w-10 p-2"
-                        src={"public/assets/LinkedIn_logo_initials.png"}
-                      />
+                      <img className="w-10 p-2" />
                     </Link>
                   </div>
                 </div>
@@ -112,10 +109,7 @@ export const InterestPage = () => {
                       to={`${position.linkedin}`}
                       className="hover:scale-105 transition-all duration-300"
                     >
-                      <img
-                        className="w-10 p-2"
-                        src={"public/assets/LinkedIn_logo_initials.png"}
-                      />
+                      <img className="w-10 p-2" />
                     </Link>
                   </div>
                 </div>
