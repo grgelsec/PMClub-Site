@@ -70,7 +70,7 @@ export const InterestPage = () => {
                     >
                       <img
                         className="w-10 p-2"
-                        src="public/assets/LinkedIn_logo_initials.png"
+                        src={"public/assets/LinkedIn_logo_initials.png"}
                       />
                     </Link>
                   </div>
@@ -114,7 +114,7 @@ export const InterestPage = () => {
                     >
                       <img
                         className="w-10 p-2"
-                        src="public/assets/LinkedIn_logo_initials.png"
+                        src={"public/assets/LinkedIn_logo_initials.png"}
                       />
                     </Link>
                   </div>
