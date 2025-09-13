@@ -2,129 +2,166 @@ import { Link } from "react-router-dom";
 
 export const AboutPage = () => {
   return (
-    <div className="min-h-screen w-full p-4 md:p-8 lg:p-24" id="about">
-      <div className="flex w-full justify-center ">
-        <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#c7a1fc] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 mb-14 p-2 shadow-xl">
-          INFO
-        </h1>
+    <div className="min-h-screen bg-gradient-to-br from-primary-light/20 via-white to-secondary/10 pt-16">
+      {/* Hero Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight">
+            ABOUT
+            <span className="block bg-gradient-to-r from-primary via-primary-dark to-secondary bg-clip-text text-transparent">
+              PMC
+            </span>
+          </h1>
+          <p className="text-xl sm:text-2xl lg:text-3xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed tracking-wide">
+            Building the next generation of product leaders through innovation, collaboration, and real-world experience.
+          </p>
+        </div>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-8 h-full">
-        <div className="h-full">
-          <div
-            id="hook"
-            className="rounded-xl shadow-xl p-4 md:p-6 bg-white/80 ring-4 ring-[#D5B8FF] h-full"
-          >
-            <div className="flex text-[#c7a1fc] text-2xl md:text-3xl font-bold justify-center mb-4">
-              <h1 className="hover:scale-105 transition-transform duration-300">
-                ABOUT PMC
-              </h1>
+
+      {/* Mission Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto">
+           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+             {/* Left Side - Our Mission (Full Height) */}
+             <div className="h-full">
+               <div className="bg-gradient-to-br from-primary/15 to-accent/15 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 h-full flex flex-col justify-center">
+                 <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-6 tracking-tight">
+                   Our Mission
+                 </h2>
+                 <p className="text-lg text-gray-700 leading-relaxed mb-6">
+                   At Product Management Club, we bridge the gap between innovation and execution. Our community brings together aspiring product managers, designers, and tech enthusiasts to learn, collaborate, and grow together in the dynamic field of product management.
+                 </p>
+                 <p className="text-lg text-gray-700 leading-relaxed">
+                   We believe that great products are built by diverse teams working together. That's why we create an inclusive environment where students from all backgrounds can develop their skills, build meaningful connections, and launch successful careers in product management.
+                 </p>
+               </div>
+             </div>
+
+             {/* Right Side - Split Vertically */}
+             <div className="flex flex-col gap-8 h-full">
+               {/* Top Half - Logo */}
+               <div className="h-1/2">
+                 <div className="bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 h-full flex items-center justify-center relative">
+                   <img
+                     className="w-full max-w-sm h-auto rounded-2xl shadow-xl"
+                     src="/assets/PM Club (1).png"
+                     alt="Product Management Club"
+                   />
+                   {/* Decorative elements */}
+                   <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent/20 rounded-full blur-xl"></div>
+                   <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
+                 </div>
+               </div>
+
+               {/* Bottom Half - What Makes Us Different */}
+               <div className="h-1/2">
+                 <div className="bg-gradient-to-r from-primary/10 to-secondary/10 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/20 hover:shadow-2xl transition-all duration-300 h-full flex flex-col justify-center">
+                   <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-wide">
+                     What Makes Us Different
+                   </h3>
+                   <ul className="space-y-3 text-gray-700">
+                     <li className="flex items-start">
+                       <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                       <span>Hands-on workshops with real industry tools and methodologies</span>
+                     </li>
+                     <li className="flex items-start">
+                       <span className="w-2 h-2 bg-accent rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                       <span>Direct mentorship from experienced product leaders</span>
+                     </li>
+                     <li className="flex items-start">
+                       <span className="w-2 h-2 bg-secondary rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                       <span>Collaborative projects that build your portfolio</span>
+                     </li>
+                     <li className="flex items-start">
+                       <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></span>
+                       <span>Networking opportunities with top tech companies</span>
+                     </li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+           </div>
+        </div>
+      </div>
+
+      {/* Values Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 tracking-tight">
+              Our Values
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              The principles that guide everything we do
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/30 text-center group hover:shadow-2xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-wide">Innovation</h3>
+              <p className="text-gray-600 leading-relaxed">We embrace new ideas and cutting-edge approaches to product development.</p>
             </div>
 
-            <div className="h-1/4 w-full text-white text-sm md:text-xl py-6 px-2 md:p-6 lg:px-6 lg:py-2 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl sm:text-xl">
-              At Product Management Club, we bridge the gap between innovation
-              and execution. Our community brings together aspiring product
-              managers, designers, and tech enthusiasts to learn, collaborate,
-              and grow together in the dynamic field of product management. Our
-              community brings together aspiring product managers, designers,
-              and tech enthusiasts to learn, collaborate, and grow together in
-              the dynamic field of product management.
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/30 text-center group hover:shadow-2xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-wide">Collaboration</h3>
+              <p className="text-gray-600 leading-relaxed">We believe in the power of teamwork and diverse perspectives.</p>
             </div>
 
-            <div className="lg:h-1/3 sm:h-2/6 my-10 flex justify-center items-center">
-              <img
-                className="h-full w-auto rounded-xl shadow-lg hover:scale-[1.02] transition-transform duration-300 object-contain"
-                src={`/assets/PM Club (1).png`}
-                alt="Product Management Club"
-              />
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/30 text-center group hover:shadow-2xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-wide">Excellence</h3>
+              <p className="text-gray-600 leading-relaxed">We strive for the highest standards in everything we do.</p>
             </div>
 
-            <div className="h-1/4 w-full text-white text-sm md:text-xl p-2 md:p-6 lg:px-6 lg:py-2 rounded-xl bg-[#c7a1fc] hover:shadow-md transition-all duration-300 flex items-center lg:text-xl sm:text-xl">
-              We offer hands-on workshops, networking events, and real-world
-              project experiences that prepare our members for successful
-              careers in product management. Join us to develop your skills,
-              build your network, and shape the future of technology. Our
-              community brings together aspiring product managers, designers,
-              and tech enthusiasts to learn, collaborate, and grow together in
-              the dynamic field of product management.
+            <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-xl border border-white/30 text-center group hover:shadow-2xl transition-all duration-300">
+              <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                <svg className="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3 tracking-wide">Community</h3>
+              <p className="text-gray-600 leading-relaxed">We build lasting relationships and support each other's growth.</p>
             </div>
           </div>
         </div>
+      </div>
 
-        <div className="grid grid-rows-2 gap-4 h-full">
-          <div className="rounded-xl shadow-2xl bg-white/80 p-4 md:p-6 ring-4 ring-orange-300 h-full">
-            <div className="text-orange-300 text-xl md:text-3xl font-bold text-center mb-4">
-              <h1 className="hover:scale-105 transition-transform duration-300">
-                UPCOMING EVENTS
-              </h1>
-            </div>
-
-            <div className="flex flex-col lg:flex-row gap-4 h-[calc(100%-4rem)]">
-              <div className="w-full lg:w-1/2 rounded-xl p-4 bg-orange-300 flex flex-col">
-                <div className="text-white font-bold text-lg mb-2 lg:text-xl">
-                  Resume/Recruiting | Product Design Activity
-                </div>
-
-                <p className="text-white text-sm md:text-base flex-grow lg:text-xl">
-                  Join us for a resume/recruiting info session along with a
-                  product design activity!
-                </p>
-
-                <div className="flex justify-between items-center text-sm text-white mt-2 lg:text-md">
-                  <span>Shoemaker Innovaion Center</span>
-                  <span className="font-medium">Feb 4th, 2025</span>
-                </div>
-              </div>
-              <div className="w-full lg:w-1/2 flex flex-col justify-between gap-2 lg:border-l border-[#FFD6A5]/30 lg:pl-4">
-                {[
-                  {
-                    title: "MVP workshop with shoemaker scholars",
-                    date: "Feb 11th, 7PM",
-                  },
-                  { title: "Big Tech Guest Speaker", date: "Feb 18th, 7PM" },
-                  { title: "PMC Meeting", date: "Feb 25th, 7PM" },
-                  { title: "PMC Meeting", date: "March 4th, 7PM" },
-                ].map((event, index) => (
-                  <div
-                    key={index}
-                    className="p-4 lg:p-6  rounded-xl bg-orange-300 cursor-pointer hover:shadow-xl hover:-translate-y-0.5 duration-300"
-                  >
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium text-white text-sm md:text-base">
-                        {event.title}
-                      </span>
-                      <span className="text-sm text-white lg:text-lg">
-                        {event.date}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          <div className="rounded-xl shadow-2xl bg-white/80 p-4 ring-4 ring-green-300 flex flex-col justify-between h-full">
-            <div className="text-[#36ffae] text-2xl md:text-3xl font-bold text-center">
-              <h1>JOIN SLACK</h1>
-            </div>
-            <div className="flex justify-center flex-grow items-center">
+      {/* CTA Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/30">
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-6 tracking-tight">
+              Ready to Join Our Community?
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              Connect with like-minded students and start your journey in product management today.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <Link
-                to={`https://join.slack.com/t/productmanage-tps7335/shared_invite/zt-2ybtg0oqc-OrB3KqjS11tgdRwSuaxJNg`}
-                className="w-32 md:w-40 p-4 lg:p-8 rounded-xl bg-[#36ffae] flex justify-center hover:shadow-xl hover:-translate-y-0.5 duration-300"
+                to="/join"
+                className="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-primary/25"
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={1.5}
-                  stroke="currentColor"
-                  className="w-6 h-6 md:w-8 md:h-8 lg:w-10 lg:h-10"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 12 3.269 3.125A59.769 59.769 0 0 1 21.485 12 59.768 59.768 0 0 1 3.27 20.875L5.999 12Zm0 0h7.5"
-                  />
-                </svg>
+                Join PMC Today
+              </Link>
+              <Link
+                to="/events"
+                className="bg-white/90 backdrop-blur-md hover:bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-xl border-2 border-white/30"
+              >
+                View Our Events
               </Link>
             </div>
           </div>

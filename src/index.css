@@ -1,6 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --theme-primary: #6366F1; /* Indigo primary */
+  --theme-primary-dark: #4F46E5; /* Dark indigo */
+  --theme-primary-light: #A5B4FC; /* Light indigo */
+  --theme-secondary: #0EA5E9; /* Sky blue secondary */
+  --theme-secondary-dark: #0284C7; /* Ocean blue */
+  --theme-accent: #10B981; /* Emerald accent */
+  --theme-accent-light: #6EE7B7; /* Light emerald */
+}
+
+/* Accessibility improvements */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: #000;
+  color: #fff;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+  border-radius: 4px;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+*:focus {
+  outline: 2px solid var(--theme-primary);
+  outline-offset: 2px;
+}
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;

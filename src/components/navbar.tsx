@@ -1,8 +1,8 @@
 export const ButtonBar = () => {
   return (
     <>
-      <div className="flex flex-wrap row px-6 py-2 bg-[#c7a1fc] rounded-xl hover:scale-105 transition-transform duration-300  ring-white z-50 ring-2">
-        <ul className="flex row space-x-3">
+      <div className="flex flex-wrap row px-6 py-1 bg-[#c7a1fc] rounded-xl hover:scale-105 transition-transform duration-300  ring-white z-50 ring-2">
+        <ul className="flex row space-x-4">
           <button
             onClick={() =>
               document

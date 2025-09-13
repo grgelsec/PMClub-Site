@@ -4,7 +4,33 @@ export default {
   theme: {
     extend: {
       colors: {
+        // CURRENT THEME: FAANG-inspired professional palette
+        primary: {
+          DEFAULT: "#6366F1", // Professional indigo
+          dark: "#4F46E5",
+          light: "#A5B4FC",
+        },
+        secondary: {
+          DEFAULT: "#0EA5E9", // Sky blue
+          dark: "#0284C7", // Ocean blue
+        },
+        accent: {
+          DEFAULT: "#10B981", // Professional emerald
+          light: "#6EE7B7",
+        },
+
+
+
+        // Preserve original signature colors
         lavender: "#D5B8FF",
+        "original-green": "#98FFD6", // Original mint green
+        "original-orange": "#FFD6A5", // Original peach
+        // Sophisticated neutrals
+        neutral: {
+          50: "#F9FAFB",
+          100: "#F3F4F6",
+          900: "#111827",
+        },
       },
       animation: {
         typewritter: "typewriter 3s steps(97) forwards",
@@ -32,6 +58,9 @@ export default {
             opacity: "0",
           },
         },
+      },
+      backdropBlur: {
+        xs: '2px',
       },
     },
   },

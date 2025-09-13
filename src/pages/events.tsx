@@ -1,120 +1,244 @@
+import { Link } from "react-router-dom";
+
 export const EventsPage = () => {
+  const upcomingEvents = [
+    {
+      eventTitle: "Resume/Recruiting | Product Design Activity",
+      description: "Join us for a resume/recruiting info session along with a product design activity!",
+      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+      time: "Feb 4th, 2025 | 7PM",
+      type: "Workshop",
+      attendees: "50+ expected"
+    },
+    {
+      eventTitle: "MVP Workshop with Shoemaker Scholars",
+      description: "Come along for a special workshop with IU Shoemaker scholars on building minimum viable products!",
+      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+      time: "Feb 11th, 2025 | 7PM",
+      type: "Workshop",
+      attendees: "30+ expected"
+    },
+    {
+      eventTitle: "Big Tech Guest Speaker",
+      description: "Come sit in with us on a special talk from a guest speaker with big tech experience!",
+      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+      time: "Feb 18th, 2025 | 7PM",
+      type: "Speaker",
+      attendees: "80+ expected"
+    },
+  ];
+
+  const pastEvents = [
+    {
+      eventTitle: "Product Roadmapping",
+      description: "Learn about how to outline the vision, direction, and progress of a product!",
+      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+      time: "Nov 12th, 2024 | 7PM",
+      type: "Workshop",
+      attendees: "45 attended"
+    },
+    {
+      eventTitle: "SDL and Tech Basics",
+      description: "Informative session on tech basics needed for PMs to thrive when working with engineers.",
+      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+      time: "Oct 29th, 2024 | 7PM",
+      type: "Educational",
+      attendees: "60 attended"
+    },
+    {
+      eventTitle: "Navigating the Product World",
+      description: "Join us for a keynote on how to create/find PM opportunities and how to succeed in the product world!",
+      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
+      time: "Sept 1st, 2024 | 7PM",
+      type: "Keynote",
+      attendees: "75 attended"
+    },
+  ];
+
+  const getEventTypeColor = (type: string) => {
+    switch (type) {
+      case "Workshop": return "from-primary to-primary-dark text-white";
+      case "Speaker": return "from-accent to-accent-dark text-white";
+      case "Educational": return "from-secondary to-secondary-dark text-white";
+      case "Keynote": return "from-primary to-accent text-white";
+      default: return "from-gray-600 to-gray-800 text-white";
+    }
+  };
+
+  const getEventTypeIcon = (type: string) => {
+    switch (type) {
+      case "Workshop": return "M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10";
+      case "Speaker": return "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z";
+      case "Educational": return "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253";
+      case "Keynote": return "M11 5.882V19.24a1.76 1.76 0 01-3.417.592l-2.147-6.15M18 13a3 3 0 100-6M5.436 13.683A4.001 4.001 0 017 6h1.832c4.1 0 7.625-1.234 9.168-3v14c-1.543-1.766-5.067-3-9.168-3H7a3.988 3.988 0 01-1.564-.317z";
+      default: return "M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z";
+    }
+  };
+
   return (
-    <div id="events" className="h-3/4 w-full p-4 sm:p-6 md:p-8 lg:p-24">
-      <div className="w-full p-2 bg-gradient-to-br white rounded-xl ">
-        <div className="flex w-full justify-center ">
-          <h1 className="font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-center bg-[#c7a1fc] text-white rounded-xl w-full md:w-1/2 lg:w-1/3 p-2 shadow-xl">
-            EVENTS
+    <div className="min-h-screen bg-gradient-to-br from-primary-light/20 via-white to-secondary/10 pt-16">
+      {/* Hero Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight">
+            OUR
+            <span className="block bg-gradient-to-r from-primary via-primary-dark to-secondary bg-clip-text text-transparent">
+              EVENTS
+            </span>
           </h1>
+          <p className="text-xl sm:text-2xl lg:text-3xl text-gray-600 max-w-4xl mx-auto font-medium leading-relaxed tracking-wide">
+            Join us for workshops, speakers, and networking opportunities that will accelerate your product management journey.
+          </p>
         </div>
+      </div>
 
-        <main className="flex flex-col gap-6 w-full p-4 sm:p-6 md:p-8 lg:p-12 rounded-xl">
-          <h2 className=" w-full flex justify-start p-2">
-            <span className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#D5B8FF] hover:scale-105 duration-300">
-              UPCOMING
-            </span>
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 fot-bold">
-            {[
-              {
-                eventTitle: "Resume/Recruiting | Product Design Activity",
-                description:
-                  "Join us for a resume/recruiting info session along with a product design activtiy!",
-                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-                time: "Feb 4th, 2025 | 7PM",
-              },
-              {
-                eventTitle: "MVP workshop with shoemaker scholars!",
-                description:
-                  "Come along for a special workshop with IU shoemaker scholars!",
-                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-                time: "Feb 11th, 2025 | 7PM",
-              },
-              {
-                eventTitle: "Big Tech Guest Speaker",
-                description:
-                  "Come sit in with us on a special talk from a guest speaker with big tech experience!",
-                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-                time: "Feb 18th, 2025 | 7PM",
-              },
-            ].map((event, index) => (
+      {/* Upcoming Events Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 tracking-tight">
+              Upcoming Events
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Don't miss these exciting opportunities to learn and connect
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {upcomingEvents.map((event, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl p-2 h-80 transition-transform hover:scale-105 duration-300"
+                className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2`}
               >
-                <div className="w-full h-full bg-white rounded-xl p-4 flex flex-col">
-                  <h3 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-2xl  text-black ">
-                    {event.eventTitle}
-                  </h3>
-                  <p className="flex-grow mt-4 text-sm sm:text-base text-black overflow-auto">
-                    {event.description}
-                  </p>
-                  <footer className="flex justify-between items-center mt-4 px-2 space-x-4">
-                    <p className="text-sm sm:text-base text-black">
-                      {event.location}
-                    </p>
-                    <p className="text-sm sm:text-base text-black">
-                      {event.time}
-                    </p>
-                  </footer>
+                {/* Event Type Badge */}
+                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r ${getEventTypeColor(event.type)}`}>
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={getEventTypeIcon(event.type)} />
+                  </svg>
+                  {event.type}
                 </div>
+
+                {/* Event Title */}
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-primary transition-colors duration-300">
+                  {event.eventTitle}
+                </h3>
+
+                {/* Event Description */}
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {event.description}
+                </p>
+
+                {/* Event Details */}
+                <div className="space-y-3 mb-6">
+                  <div className="flex items-start">
+                    <svg className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span className="text-gray-700 text-sm">{event.location}</span>
+                  </div>
+                  <div className="flex items-start">
+                    <svg className="w-5 h-5 text-primary mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                    <span className="text-gray-700 text-sm">{event.time}</span>
+                  </div>
+
+                </div>
+
+
               </div>
             ))}
           </div>
+        </div>
+      </div>
 
-          <h2 className=" w-full flex justify-start p-2 mt-8">
-            <span className="font-bold text-xl sm:text-2xl md:text-3xl lg:text-4xl text-[#D5B8FF] hover:scale-105 duration-300">
-              PAST
-            </span>
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                eventTitle: "Product Roadmapping",
-                description:
-                  "Learn about how to outline the vision, direction, and progress of a product!",
-                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-                time: "Nov 12th, 2024 | 7PM",
-              },
-              {
-                eventTitle: "SDL and Tech Basics",
-                description:
-                  "Informative session on tech basics needed for PMs to thrive when working with engineers. Learn from our Director of Technology with a special keynote aimed towards key concepts and terms!",
-                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-                time: "Oct 29th, 2024 | 7PM",
-              },
-              {
-                eventTitle: "Navigating the Product World",
-                description:
-                  "Join us for a keynote on how to create/find PM opportunities and how to succeed in the product world!",
-                location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-                time: "Sept 1st, 2024 | 7PM",
-              },
-            ].map((event, index) => (
+      {/* Past Events Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16 bg-white/50 backdrop-blur-sm">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4 tracking-tight">
+              Past Events
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              See what we've accomplished together
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {pastEvents.map((event, index) => (
               <div
                 key={index}
-                className="bg-gradient-to-br from-[#D5B8FF] via-[#98FFD6] to-[#FFD6A5] rounded-xl p-2 h-80 transition-transform hover:scale-105 duration-300"
+                className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
               >
-                <div className="w-full h-full bg-white rounded-xl p-4 flex flex-col">
-                  <h3 className="font-bold text-lg sm:text-xl md:text-2xl lg:text-2xl text-black">
-                    {event.eventTitle}
-                  </h3>
-                  <p className="flex-grow mt-4 text-sm sm:text-base text-black overflow-auto">
-                    {event.description}
-                  </p>
-                  <footer className="flex justify-between items-center mt-4 px-2 space-x-4">
-                    <p className="text-sm sm:text-base text-black">
-                      {event.location}
-                    </p>
-                    <p className="text-sm sm:text-base text-black">
-                      {event.time}
-                    </p>
-                  </footer>
+                 {/* Event Type Badge */}
+                 <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r ${getEventTypeColor(event.type)}`}>
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={getEventTypeIcon(event.type)} />
+                  </svg>
+                  {event.type}
                 </div>
+
+                {/* Event Title */}
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">
+                  {event.eventTitle}
+                </h3>
+
+                {/* Event Description */}
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  {event.description}
+                </p>
+
+                {/* Event Details */}
+                <div className="space-y-3 mb-6">
+                   <div className="flex items-start">
+                     <svg className="w-5 h-5 text-gray-400 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                     </svg>
+                     <span className="text-gray-500 text-sm">{event.location}</span>
+                   </div>
+                   <div className="flex items-start">
+                     <svg className="w-5 h-5 text-gray-400 mt-0.5 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                     </svg>
+                     <span className="text-gray-500 text-sm">{event.time}</span>
+                   </div>
+                </div>
+
+
               </div>
             ))}
           </div>
-        </main>
+        </div>
+      </div>
+
+      {/* CTA Section */}
+      <div className="px-4 sm:px-6 lg:px-8 py-16">
+        <div className="max-w-4xl mx-auto text-center">
+          <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/30">
+            <h2 className="text-3xl sm:text-4xl font-black text-gray-900 mb-6 tracking-tight">
+              Stay Updated
+            </h2>
+            <p className="text-xl text-gray-700 mb-8 leading-relaxed">
+              Never miss an event! Join our community to get notified about upcoming workshops and speakers.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <Link
+                to="/join"
+                className="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-primary/25"
+              >
+                Join Our Community
+              </Link>
+              <Link
+                to="/about"
+                className="bg-white/90 backdrop-blur-md hover:bg-white text-gray-900 px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-xl border-2 border-white/30"
+              >
+                Learn More About Us
+              </Link>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
