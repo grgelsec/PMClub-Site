@@ -65,9 +65,9 @@ export const TeamPage = () => {
   ];
 
   const getRoleColor = (role: string) => {
-    if (role.includes("President")) return "from-primary/20 to-primary/10 border-primary/30";
-    if (role.includes("Vice")) return "from-accent/20 to-accent/10 border-accent/30";
-    if (role.includes("Director")) return "from-secondary/20 to-secondary/10 border-secondary/30";
+    if (role.includes("President")) return "from-primary/80 to-primary/60 border-primary/90";
+    if (role.includes("Vice")) return "from-accent/80 to-accent/60 border-accent/90";
+    if (role.includes("Director")) return "from-secondary/80 to-secondary/60 border-secondary/90";
     return "from-gray-100 to-gray-50 border-gray-200";
   };
 
@@ -83,6 +83,15 @@ export const TeamPage = () => {
       {/* Hero Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto text-center">
+          {/* Logo */}
+          <div className="mb-10">
+            <img
+              className="h-28 w-auto mx-auto transition-all duration-500 hover:scale-105 drop-shadow-lg"
+              src="/assets/pmcLogo.png"
+              alt="PMC Logo"
+            />
+          </div>
+
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight">
             OUR
             <span className="block bg-gradient-to-r from-primary via-primary-dark to-secondary bg-clip-text text-transparent">
@@ -114,7 +123,7 @@ export const TeamPage = () => {
                 className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2"
               >
                 {/* Role Badge */}
-                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r ${getRoleColor(member.role)}`}>
+                <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white mb-6 bg-gradient-to-r ${getRoleColor(member.role)}`}>
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={getRoleIcon(member.role)} />
                   </svg>
@@ -170,7 +179,7 @@ export const TeamPage = () => {
                 className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
               >
                 {/* Focus Area Badge */}
-                <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r from-accent/20 to-secondary/20 border border-accent/30">
+                <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white mb-6 bg-gradient-to-r from-accent/80 to-secondary/60 border border-accent/90">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>

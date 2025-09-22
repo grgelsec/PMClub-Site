@@ -57,11 +57,11 @@ export const EventsPage = () => {
 
   const getEventTypeColor = (type: string) => {
     switch (type) {
-      case "Workshop": return "from-primary to-primary-dark text-white";
-      case "Speaker": return "from-accent to-accent-dark text-white";
-      case "Educational": return "from-secondary to-secondary-dark text-white";
-      case "Keynote": return "from-primary to-accent text-white";
-      default: return "from-gray-600 to-gray-800 text-white";
+      case "Workshop": return "from-primary/80 to-primary/60 border border-primary/90 text-white";
+      case "Speaker": return "from-accent/80 to-accent/60 border border-accent/90 text-white";
+      case "Educational": return "from-secondary/80 to-secondary/60 border border-secondary/90 text-white";
+      case "Keynote": return "from-primary/80 to-accent/60 border border-primary/90 text-white";
+      default: return "from-gray-500/80 to-gray-600/60 border border-gray-700/90 text-white";
     }
   };
 
@@ -80,6 +80,15 @@ export const EventsPage = () => {
       {/* Hero Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto text-center">
+          {/* Logo */}
+          <div className="mb-10">
+            <img
+              className="h-28 w-auto mx-auto transition-all duration-500 hover:scale-105 drop-shadow-lg"
+              src="/assets/pmcLogo.png"
+              alt="PMC Logo"
+            />
+          </div>
+
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight">
             OUR
             <span className="block bg-gradient-to-r from-primary via-primary-dark to-secondary bg-clip-text text-transparent">

@@ -4,9 +4,18 @@ export const AboutPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-primary-light/20 via-white to-secondary/10 pt-16">
       {/* Hero Section */}
-      <div className="px-4 sm:px-6 lg:px-8 py-16">
-        <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight">
+       <div className="px-4 sm:px-6 lg:px-8 py-16">
+         <div className="max-w-7xl mx-auto text-center">
+           {/* Logo */}
+           <div className="mb-10">
+             <img
+               className="h-28 w-auto mx-auto transition-all duration-500 hover:scale-105 drop-shadow-lg"
+               src="/assets/pmcLogo.png"
+               alt="PMC Logo"
+             />
+           </div>
+
+           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight">
             ABOUT
             <span className="block bg-gradient-to-r from-primary via-primary-dark to-secondary bg-clip-text text-transparent">
               PMC
@@ -39,26 +48,55 @@ export const AboutPage = () => {
 
              {/* Right Side - Split Vertically */}
              <div className="flex flex-col gap-8 h-full">
-               {/* Top Half - Logo */}
-               <div className="h-1/2">
-                 <div className="bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 h-full flex items-center justify-center relative">
-                   <img
-                     className="w-full max-w-sm h-auto rounded-2xl shadow-xl"
-                     src="/assets/PM Club (1).png"
-                     alt="Product Management Club"
-                   />
-                   {/* Decorative elements */}
-                   <div className="absolute -top-4 -right-4 w-16 h-16 bg-accent/20 rounded-full blur-xl"></div>
-                   <div className="absolute -bottom-4 -left-4 w-20 h-20 bg-primary/20 rounded-full blur-xl"></div>
-                 </div>
-               </div>
+                {/* Top Half - Opportunities */}
+                <div className="h-1/2">
+                  <div className="bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 h-full flex flex-col justify-center">
+                    <h3 className="text-2xl font-black text-gray-900 mb-6 tracking-wide text-center">
+                      Opportunities
+                    </h3>
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                      {/* Hear from Experts */}
+                      <div className="text-center group">
+                        <div className="w-12 h-12 bg-gradient-to-br from-primary/20 to-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+                          </svg>
+                        </div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Hear from Experts</h4>
+                        <p className="text-sm text-gray-600">FAANG & F500 PM insights</p>
+                      </div>
+
+                      {/* Network */}
+                      <div className="text-center group">
+                        <div className="w-12 h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                          </svg>
+                        </div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Network</h4>
+                        <p className="text-sm text-gray-600">Connect with professionals</p>
+                      </div>
+
+                      {/* Real Projects */}
+                      <div className="text-center group">
+                        <div className="w-12 h-12 bg-gradient-to-br from-secondary/20 to-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-3 group-hover:scale-110 transition-transform duration-300">
+                          <svg className="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                          </svg>
+                        </div>
+                        <h4 className="font-semibold text-gray-900 mb-2">Real Projects</h4>
+                        <p className="text-sm text-gray-600">Community PM work</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
                {/* Bottom Half - What Makes Us Different */}
                <div className="h-1/2">
                  <div className="bg-gradient-to-r from-primary/10 to-secondary/10 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-primary/20 hover:shadow-2xl transition-all duration-300 h-full flex flex-col justify-center">
-                   <h3 className="text-2xl font-bold text-gray-900 mb-4 tracking-wide">
-                     What Makes Us Different
-                   </h3>
+                    <h3 className="text-2xl font-black text-gray-900 mb-4 tracking-wide">
+                      What Makes Us Different
+                    </h3>
                    <ul className="space-y-3 text-gray-700">
                      <li className="flex items-start">
                        <span className="w-2 h-2 bg-primary rounded-full mt-2 mr-4 flex-shrink-0"></span>

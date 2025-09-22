@@ -59,6 +59,15 @@ export const JoinPage = () => {
       {/* Hero Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-7xl mx-auto text-center">
+          {/* Logo */}
+          <div className="mb-10">
+            <img
+              className="h-28 w-auto mx-auto transition-all duration-500 hover:scale-105 drop-shadow-lg"
+              src="/assets/pmcLogo.png"
+              alt="PMC Logo"
+            />
+          </div>
+
           <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-gray-900 mb-8 tracking-tight">
             JOIN
             <span className="block bg-gradient-to-r from-primary via-primary-dark to-secondary bg-clip-text text-transparent">
@@ -87,7 +96,7 @@ export const JoinPage = () => {
             {joinOptions.map((option, index) => (
               <div
                 key={index}
-                className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2"
+                className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2 flex flex-col h-full"
               >
                 {/* Icon */}
                 <div className={`w-16 h-16 bg-gradient-to-br ${option.color} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}>
@@ -106,24 +115,26 @@ export const JoinPage = () => {
                   {option.description}
                 </p>
 
-                {/* CTA Button */}
-                {option.link.startsWith('http') ? (
-                  <a
-                    href={option.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={`block w-full bg-gradient-to-r ${option.buttonColor} text-white py-4 px-6 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg text-center`}
-                  >
-                    {option.action}
-                  </a>
-                ) : (
-                  <Link
-                    to={option.link}
-                    className={`block w-full bg-gradient-to-r ${option.buttonColor} text-white py-4 px-6 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg text-center`}
-                  >
-                    {option.action}
-                  </Link>
-                )}
+                 {/* CTA Button */}
+                 <div className="mt-auto">
+                   {option.link.startsWith('http') ? (
+                     <a
+                       href={option.link}
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className={`block w-full bg-gradient-to-r ${option.buttonColor} text-white py-4 px-6 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg text-center`}
+                     >
+                       {option.action}
+                     </a>
+                   ) : (
+                     <Link
+                       to={option.link}
+                       className={`block w-full bg-gradient-to-r ${option.buttonColor} text-white py-4 px-6 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-lg text-center`}
+                     >
+                       {option.action}
+                     </Link>
+                   )}
+                 </div>
               </div>
             ))}
           </div>
