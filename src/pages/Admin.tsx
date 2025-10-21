@@ -48,17 +48,48 @@ export const AdminPage = () => {
   }, []);
 
   const fetchData = async () => {
-    const [boardRes, committeeRes, eventsRes, emailsRes] = await Promise.all([
-      supabase.from('board_members').select('*'),
-      supabase.from('committee_members').select('*'),
-      supabase.from('events').select('*'),
-      supabase.from('allowed_emails').select('*'),
-    ]);
+    try {
+      const [boardRes, committeeRes, eventsRes, emailsRes] = await Promise.all([
+        supabase.from('board_members').select('*'),
+        supabase.from('committee_members').select('*'),
+        supabase.from('events').select('*'),
+        supabase.from('allowed_emails').select('*'),
+      ]);
 
-    if (boardRes.data) setBoardMembers(boardRes.data);
-    if (committeeRes.data) setCommitteeMembers(committeeRes.data);
-    if (eventsRes.data) setEvents(eventsRes.data);
-    if (emailsRes.data) setAllowedEmails(emailsRes.data);
+      if (boardRes.error) {
+        console.error('Error fetching board members:', boardRes.error.message);
+        setBoardMembers([]);
+      } else {
+        setBoardMembers(boardRes.data || []);
+      }
+
+      if (committeeRes.error) {
+        console.error('Error fetching committee members:', committeeRes.error.message);
+        setCommitteeMembers([]);
+      } else {
+        setCommitteeMembers(committeeRes.data || []);
+      }
+
+      if (eventsRes.error) {
+        console.error('Error fetching events:', eventsRes.error.message);
+        setEvents([]);
+      } else {
+        setEvents(eventsRes.data || []);
+      }
+
+      if (emailsRes.error) {
+        console.error('Error fetching allowed emails:', emailsRes.error.message);
+        setAllowedEmails([]);
+      } else {
+        setAllowedEmails(emailsRes.data || []);
+      }
+    } catch (err) {
+      console.error('Unexpected error fetching admin data:', err);
+      setBoardMembers([]);
+      setCommitteeMembers([]);
+      setEvents([]);
+      setAllowedEmails([]);
+    }
     setLoading(false);
   };
 
@@ -122,35 +153,41 @@ export const AdminPage = () => {
                 Manage executive team members
               </p>
             </div>
-            <AnimatePresence>
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                layout
-              >
-                {boardMembers.map((member) => (
-                  <motion.div
-                    key={member.id}
-                    className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.3 }}
-                    layout
-                  >
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{member.name}</h3>
-                    <p className="text-gray-600 mb-2">{member.role}</p>
-                    <p className="text-gray-600 mb-4">{member.bio}</p>
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark font-semibold">LinkedIn</a>
-                    <button
-                      onClick={() => handleDelete('board_members', member.id)}
-                      className="absolute bottom-4 right-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-2xl font-semibold transition-all duration-300"
-                    >
-                      Delete
-                    </button>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+             {boardMembers.length === 0 ? (
+               <div className="text-center py-12">
+                 <p className="text-xl text-gray-400">No board members added yet</p>
+               </div>
+             ) : (
+               <AnimatePresence>
+                 <motion.div
+                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                   layout
+                 >
+                   {boardMembers.map((member) => (
+                     <motion.div
+                       key={member.id}
+                       className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30"
+                       initial={{ opacity: 0, scale: 0.8 }}
+                       animate={{ opacity: 1, scale: 1 }}
+                       exit={{ opacity: 0, scale: 0.8 }}
+                       transition={{ duration: 0.3 }}
+                       layout
+                     >
+                       <h3 className="text-2xl font-bold text-gray-900 mb-3">{member.name}</h3>
+                       <p className="text-gray-600 mb-2">{member.role}</p>
+                       <p className="text-gray-600 mb-4">{member.bio}</p>
+                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark font-semibold">LinkedIn</a>
+                       <button
+                         onClick={() => handleDelete('board_members', member.id)}
+                         className="absolute bottom-4 right-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-2xl font-semibold transition-all duration-300"
+                       >
+                         Delete
+                       </button>
+                     </motion.div>
+                   ))}
+                 </motion.div>
+               </AnimatePresence>
+             )}
             <AddBoardMemberForm onAdd={fetchData} />
           </div>
         </section>
@@ -166,34 +203,40 @@ export const AdminPage = () => {
                 Manage committee team members
               </p>
             </div>
-            <AnimatePresence>
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                layout
-              >
-                {committeeMembers.map((member) => (
-                  <motion.div
-                    key={member.id}
-                    className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.3 }}
-                    layout
-                  >
-                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{member.name}</h3>
-                    <p className="text-gray-600 mb-4">{member.focus}</p>
-                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark font-semibold">LinkedIn</a>
-                    <button
-                      onClick={() => handleDelete('committee_members', member.id)}
-                      className="absolute bottom-4 right-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-2xl font-semibold transition-all duration-300"
-                    >
-                      Delete
-                    </button>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+             {committeeMembers.length === 0 ? (
+               <div className="text-center py-12">
+                 <p className="text-xl text-gray-400">No committee members added yet</p>
+               </div>
+             ) : (
+               <AnimatePresence>
+                 <motion.div
+                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                   layout
+                 >
+                   {committeeMembers.map((member) => (
+                     <motion.div
+                       key={member.id}
+                       className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20"
+                       initial={{ opacity: 0, scale: 0.8 }}
+                       animate={{ opacity: 1, scale: 1 }}
+                       exit={{ opacity: 0, scale: 0.8 }}
+                       transition={{ duration: 0.3 }}
+                       layout
+                     >
+                       <h3 className="text-2xl font-bold text-gray-900 mb-3">{member.name}</h3>
+                       <p className="text-gray-600 mb-4">{member.focus}</p>
+                       <a href={member.linkedin} target="_blank" rel="noopener noreferrer" className="text-primary hover:text-primary-dark font-semibold">LinkedIn</a>
+                       <button
+                         onClick={() => handleDelete('committee_members', member.id)}
+                         className="absolute bottom-4 right-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-2xl font-semibold transition-all duration-300"
+                       >
+                         Delete
+                       </button>
+                     </motion.div>
+                   ))}
+                 </motion.div>
+               </AnimatePresence>
+             )}
             <AddCommitteeMemberForm onAdd={fetchData} />
           </div>
         </section>
@@ -209,39 +252,45 @@ export const AdminPage = () => {
                 Manage upcoming and past events
               </p>
             </div>
-            <AnimatePresence>
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                layout
-              >
-                {events.map((event) => (
-                  <motion.div
-                    key={event.id}
-                    className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.3 }}
-                    layout
-                  >
-                    <h3 className="text-2xl font-bold text-gray-900 mb-4">{event.title}</h3>
-                    <p className="text-gray-600 mb-4">{event.description}</p>
-                    <div className="space-y-2 mb-4">
-                      <p className="text-gray-700"><strong>Location:</strong> {event.location}</p>
-                      <p className="text-gray-700"><strong>Time:</strong> {event.time}</p>
-                      <p className="text-gray-700"><strong>Type:</strong> {event.type}</p>
-                      <p className="text-gray-700"><strong>Status:</strong> {event.is_upcoming ? 'Upcoming' : 'Past'}</p>
-                    </div>
-                    <button
-                      onClick={() => handleDelete('events', event.id)}
-                      className="absolute bottom-4 right-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-2xl font-semibold transition-all duration-300"
-                    >
-                      Delete
-                    </button>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+             {events.length === 0 ? (
+               <div className="text-center py-12">
+                 <p className="text-xl text-gray-400">No events added yet</p>
+               </div>
+             ) : (
+               <AnimatePresence>
+                 <motion.div
+                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                   layout
+                 >
+                   {events.map((event) => (
+                     <motion.div
+                       key={event.id}
+                       className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30"
+                       initial={{ opacity: 0, scale: 0.8 }}
+                       animate={{ opacity: 1, scale: 1 }}
+                       exit={{ opacity: 0, scale: 0.8 }}
+                       transition={{ duration: 0.3 }}
+                       layout
+                     >
+                       <h3 className="text-2xl font-bold text-gray-900 mb-4">{event.title}</h3>
+                       <p className="text-gray-600 mb-4">{event.description}</p>
+                       <div className="space-y-2 mb-4">
+                         <p className="text-gray-700"><strong>Location:</strong> {event.location}</p>
+                         <p className="text-gray-700"><strong>Time:</strong> {event.time}</p>
+                         <p className="text-gray-700"><strong>Type:</strong> {event.type}</p>
+                         <p className="text-gray-700"><strong>Status:</strong> {event.is_upcoming ? 'Upcoming' : 'Past'}</p>
+                       </div>
+                       <button
+                         onClick={() => handleDelete('events', event.id)}
+                         className="absolute bottom-4 right-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-2xl font-semibold transition-all duration-300"
+                       >
+                         Delete
+                       </button>
+                     </motion.div>
+                   ))}
+                 </motion.div>
+               </AnimatePresence>
+             )}
             <AddEventForm onAdd={fetchData} />
           </div>
         </section>
@@ -257,32 +306,38 @@ export const AdminPage = () => {
                 Manage emails authorized for admin login
               </p>
             </div>
-            <AnimatePresence>
-              <motion.div
-                className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-                layout
-              >
-                {allowedEmails.map((item) => (
-                  <motion.div
-                    key={item.id}
-                    className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20"
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    exit={{ opacity: 0, scale: 0.8 }}
-                    transition={{ duration: 0.3 }}
-                    layout
-                  >
-                    <p className="text-xl font-bold text-gray-900">{item.email}</p>
-                    <button
-                      onClick={() => handleDelete('allowed_emails', item.id)}
-                      className="absolute bottom-4 right-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-2xl font-semibold transition-all duration-300"
-                    >
-                      Remove
-                    </button>
-                  </motion.div>
-                ))}
-              </motion.div>
-            </AnimatePresence>
+             {allowedEmails.length === 0 ? (
+               <div className="text-center py-12">
+                 <p className="text-xl text-gray-400">No allowed emails configured yet</p>
+               </div>
+             ) : (
+               <AnimatePresence>
+                 <motion.div
+                   className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+                   layout
+                 >
+                   {allowedEmails.map((item) => (
+                     <motion.div
+                       key={item.id}
+                       className="relative bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20"
+                       initial={{ opacity: 0, scale: 0.8 }}
+                       animate={{ opacity: 1, scale: 1 }}
+                       exit={{ opacity: 0, scale: 0.8 }}
+                       transition={{ duration: 0.3 }}
+                       layout
+                     >
+                       <p className="text-xl font-bold text-gray-900">{item.email}</p>
+                       <button
+                         onClick={() => handleDelete('allowed_emails', item.id)}
+                         className="absolute bottom-4 right-4 bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-2xl font-semibold transition-all duration-300"
+                       >
+                         Remove
+                       </button>
+                     </motion.div>
+                   ))}
+                 </motion.div>
+               </AnimatePresence>
+             )}
             <AddEmailForm onAdd={fetchData} />
           </div>
         </section>

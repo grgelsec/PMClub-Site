@@ -19,10 +19,23 @@ export const EventsPage = () => {
 
   useEffect(() => {
     const fetchEvents = async () => {
-      const { data } = await supabase.from('events').select('*');
-      if (data) {
-        setUpcomingEvents(data.filter(event => event.is_upcoming));
-        setPastEvents(data.filter(event => !event.is_upcoming));
+      try {
+        const { data, error } = await supabase.from('events').select('*');
+        if (error) {
+          console.error('Error fetching events:', error.message);
+          setUpcomingEvents([]);
+          setPastEvents([]);
+        } else if (data) {
+          setUpcomingEvents(data.filter(event => event.is_upcoming));
+          setPastEvents(data.filter(event => !event.is_upcoming));
+        } else {
+          setUpcomingEvents([]);
+          setPastEvents([]);
+        }
+      } catch (err) {
+        console.error('Unexpected error fetching events:', err);
+        setUpcomingEvents([]);
+        setPastEvents([]);
       }
       setLoading(false);
     };
@@ -96,12 +109,17 @@ export const EventsPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event) => (
-              <div
-                key={event.id}
-                className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2`}
-              >
+           {upcomingEvents.length === 0 ? (
+             <div className="text-center py-12">
+               <p className="text-xl text-gray-600">No upcoming events at this time</p>
+             </div>
+           ) : (
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               {upcomingEvents.map((event) => (
+                 <div
+                   key={event.id}
+                   className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2`}
+                 >
                 {/* Event Type Badge */}
                 <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r ${getEventTypeColor(event.type)}`}>
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -140,12 +158,13 @@ export const EventsPage = () => {
 
 
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
+             ))}
+             </div>
+           )}
+         </div>
+       </div>
 
-      {/* Past Events Section */}
+       {/* Past Events Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-16 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -157,12 +176,17 @@ export const EventsPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pastEvents.map((event) => (
-              <div
-                key={event.id}
-                className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
-              >
+           {pastEvents.length === 0 ? (
+             <div className="text-center py-12">
+               <p className="text-xl text-gray-600">No past events to display</p>
+             </div>
+           ) : (
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               {pastEvents.map((event) => (
+                 <div
+                   key={event.id}
+                   className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
+                 >
                  {/* Event Type Badge */}
                  <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold mb-6 bg-gradient-to-r ${getEventTypeColor(event.type)}`}>
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,12 +224,13 @@ export const EventsPage = () => {
 
 
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
+             ))}
+             </div>
+           )}
+         </div>
+       </div>
 
-      {/* CTA Section */}
+       {/* CTA Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/30">

@@ -24,13 +24,30 @@ export const TeamPage = () => {
 
   useEffect(() => {
     const fetchTeam = async () => {
-      const [boardRes, committeeRes] = await Promise.all([
-        supabase.from('board_members').select('*'),
-        supabase.from('committee_members').select('*'),
-      ]);
+      try {
+        const [boardRes, committeeRes] = await Promise.all([
+          supabase.from('board_members').select('*'),
+          supabase.from('committee_members').select('*'),
+        ]);
 
-      if (boardRes.data) setBoardMembers(boardRes.data);
-      if (committeeRes.data) setCommitteeMembers(committeeRes.data);
+        if (boardRes.error) {
+          console.error('Error fetching board members:', boardRes.error.message);
+          setBoardMembers([]);
+        } else {
+          setBoardMembers(boardRes.data || []);
+        }
+
+        if (committeeRes.error) {
+          console.error('Error fetching committee members:', committeeRes.error.message);
+          setCommitteeMembers([]);
+        } else {
+          setCommitteeMembers(committeeRes.data || []);
+        }
+      } catch (err) {
+        console.error('Unexpected error fetching team:', err);
+        setBoardMembers([]);
+        setCommitteeMembers([]);
+      }
       setLoading(false);
     };
 
@@ -97,12 +114,17 @@ export const TeamPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {boardMembers.map((member) => (
-              <div
-                key={member.id}
-                className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2"
-              >
+           {boardMembers.length === 0 ? (
+             <div className="text-center py-12">
+               <p className="text-xl text-gray-600">Board members coming soon</p>
+             </div>
+           ) : (
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               {boardMembers.map((member) => (
+                 <div
+                   key={member.id}
+                   className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2"
+                 >
                 {/* Role Badge */}
                 <div className={`inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white mb-6 bg-gradient-to-r ${getRoleColor(member.role)}`}>
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -136,12 +158,13 @@ export const TeamPage = () => {
                   </a>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
+             ))}
+             </div>
+           )}
+         </div>
+       </div>
 
-      {/* Committee Members Section */}
+       {/* Committee Members Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-16 bg-white/50 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
@@ -153,12 +176,17 @@ export const TeamPage = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {committeeMembers.map((member) => (
-              <div
-                key={member.id}
-                className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
-              >
+           {committeeMembers.length === 0 ? (
+             <div className="text-center py-12">
+               <p className="text-xl text-gray-600">Committee members coming soon</p>
+             </div>
+           ) : (
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+               {committeeMembers.map((member) => (
+                 <div
+                   key={member.id}
+                   className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
+                 >
                 {/* Focus Area Badge */}
                 <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold text-white mb-6 bg-gradient-to-r from-accent/80 to-secondary/60 border border-accent/90">
                   <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -192,12 +220,13 @@ export const TeamPage = () => {
                   </a>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
+             ))}
+             </div>
+           )}
+         </div>
+       </div>
 
-      {/* Join Team CTA Section */}
+       {/* Join Team CTA Section */}
       <div className="px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-gradient-to-r from-primary/10 via-accent/10 to-secondary/10 backdrop-blur-sm rounded-3xl p-12 shadow-2xl border border-white/30">
