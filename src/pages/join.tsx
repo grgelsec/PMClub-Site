@@ -18,7 +18,7 @@ export const JoinPage = () => {
       action: "Apply Now",
       link: "https://forms.gle/rwXoyybpenYsGCTX7",
       color: "from-accent/20 to-accent/10 border-accent/30",
-      buttonColor: "from-green-500 to-green-600 hover:from-green-600 hover:to-green-700"
+      buttonColor: "from-accent-light to-accent hover:from-accent hover:to-accent"
     },
     {
       title: "Attend Our Events",
