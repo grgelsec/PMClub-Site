@@ -5,6 +5,8 @@ import { AboutPage } from "./pages/about";
 import { EventsPage } from "./pages/events";
 import { TeamPage } from "./pages/Team";
 import { JoinPage } from "./pages/join";
+import { AdminPage } from "./pages/Admin";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
           <Route path="/events" element={<EventsPage />} />
           <Route path="/team" element={<TeamPage />} />
           <Route path="/join" element={<JoinPage />} />
+          <Route path="/admin" element={<ProtectedRoute><AdminPage /></ProtectedRoute>} />
         </Routes>
       </main>
     </>

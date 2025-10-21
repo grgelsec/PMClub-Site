@@ -1,59 +1,42 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
+
+interface Event {
+  id: string;
+  title: string;
+  description: string;
+  location: string;
+  time: string;
+  type: string;
+  is_upcoming: boolean;
+}
 
 export const EventsPage = () => {
-  const upcomingEvents = [
-    {
-      eventTitle: "Resume/Recruiting | Product Design Activity",
-      description: "Join us for a resume/recruiting info session along with a product design activity!",
-      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-      time: "Feb 4th, 2025 | 7PM",
-      type: "Workshop",
-      attendees: "50+ expected"
-    },
-    {
-      eventTitle: "MVP Workshop with Shoemaker Scholars",
-      description: "Come along for a special workshop with IU Shoemaker scholars on building minimum viable products!",
-      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-      time: "Feb 11th, 2025 | 7PM",
-      type: "Workshop",
-      attendees: "30+ expected"
-    },
-    {
-      eventTitle: "Big Tech Guest Speaker",
-      description: "Come sit in with us on a special talk from a guest speaker with big tech experience!",
-      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-      time: "Feb 18th, 2025 | 7PM",
-      type: "Speaker",
-      attendees: "80+ expected"
-    },
-  ];
+  const [upcomingEvents, setUpcomingEvents] = useState<Event[]>([]);
+  const [pastEvents, setPastEvents] = useState<Event[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const pastEvents = [
-    {
-      eventTitle: "Product Roadmapping",
-      description: "Learn about how to outline the vision, direction, and progress of a product!",
-      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-      time: "Nov 12th, 2024 | 7PM",
-      type: "Workshop",
-      attendees: "45 attended"
-    },
-    {
-      eventTitle: "SDL and Tech Basics",
-      description: "Informative session on tech basics needed for PMs to thrive when working with engineers.",
-      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-      time: "Oct 29th, 2024 | 7PM",
-      type: "Educational",
-      attendees: "60 attended"
-    },
-    {
-      eventTitle: "Navigating the Product World",
-      description: "Join us for a keynote on how to create/find PM opportunities and how to succeed in the product world!",
-      location: "Shoemaker Innovation Center, Luddy 2nd Floor",
-      time: "Sept 1st, 2024 | 7PM",
-      type: "Keynote",
-      attendees: "75 attended"
-    },
-  ];
+  useEffect(() => {
+    const fetchEvents = async () => {
+      const { data } = await supabase.from('events').select('*');
+      if (data) {
+        setUpcomingEvents(data.filter(event => event.is_upcoming));
+        setPastEvents(data.filter(event => !event.is_upcoming));
+      }
+      setLoading(false);
+    };
+
+    fetchEvents();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Loading...</div>
+      </div>
+    );
+  }
 
   const getEventTypeColor = (type: string) => {
     switch (type) {
@@ -114,9 +97,9 @@ export const EventsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {upcomingEvents.map((event, index) => (
+            {upcomingEvents.map((event) => (
               <div
-                key={index}
+                key={event.id}
                 className={`bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2`}
               >
                 {/* Event Type Badge */}
@@ -129,7 +112,7 @@ export const EventsPage = () => {
 
                 {/* Event Title */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight group-hover:text-primary transition-colors duration-300">
-                  {event.eventTitle}
+                  {event.title}
                 </h3>
 
                 {/* Event Description */}
@@ -175,9 +158,9 @@ export const EventsPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pastEvents.map((event, index) => (
+            {pastEvents.map((event) => (
               <div
-                key={index}
+                key={event.id}
                 className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
               >
                  {/* Event Type Badge */}
@@ -190,7 +173,7 @@ export const EventsPage = () => {
 
                 {/* Event Title */}
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 leading-tight">
-                  {event.eventTitle}
+                  {event.title}
                 </h3>
 
                 {/* Event Description */}

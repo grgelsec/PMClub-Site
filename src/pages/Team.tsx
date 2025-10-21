@@ -1,68 +1,49 @@
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { supabase } from "../lib/supabase";
+
+interface BoardMember {
+  id: string;
+  name: string;
+  role: string;
+  bio: string;
+  linkedin: string;
+}
+
+interface CommitteeMember {
+  id: string;
+  name: string;
+  focus: string;
+  linkedin: string;
+}
 
 export const TeamPage = () => {
-  const boardMembers = [
-    {
-      role: "Co-President",
-      name: "Shreyas Menon",
-      linkedin: "https://www.linkedin.com/in/menon-shreyas/",
-      bio: "Leading product strategy and community growth initiatives."
-    },
-    {
-      role: "Co-President",
-      name: "Mekaael Kazmi",
-      linkedin: "https://www.linkedin.com/in/mekaaelkazmi/",
-      bio: "Driving innovation and fostering collaborative partnerships."
-    },
-    {
-      role: "Vice President",
-      name: "Tanya Kalale",
-      linkedin: "https://www.linkedin.com/in/tanya-kalale/",
-      bio: "Coordinating operations and supporting team development."
-    },
-    {
-      role: "Director of Marketing",
-      name: "Angelina Lukose",
-      linkedin: "https://www.linkedin.com/in/angelina-lukose/",
-      bio: "Building brand presence and community engagement."
-    },
-    {
-      role: "Director of Finance",
-      name: "Reid Zona",
-      linkedin: "https://www.linkedin.com/in/reidzona/",
-      bio: "Managing resources and ensuring financial sustainability."
-    },
-    {
-      role: "Director of External Outreach",
-      name: "Isabelle U.",
-      linkedin: "https://www.linkedin.com/in/isabelleuthuppan/",
-      bio: "Building partnerships and expanding our network."
-    },
-    {
-      role: "Director of Technology",
-      name: "George Lisec",
-      linkedin: "https://www.linkedin.com/in/grgelsec/",
-      bio: "Leading technical initiatives and digital innovation."
-    },
-  ];
+  const [boardMembers, setBoardMembers] = useState<BoardMember[]>([]);
+  const [committeeMembers, setCommitteeMembers] = useState<CommitteeMember[]>([]);
+  const [loading, setLoading] = useState(true);
 
-  const committeeMembers = [
-    {
-      name: "Ale Gotanco",
-      linkedin: "https://www.linkedin.com/in/alejandrorgotanco/",
-      focus: "Event Coordination"
-    },
-    {
-      name: "Ria Kudapa",
-      linkedin: "https://www.linkedin.com/in/ria-kudapa/",
-      focus: "Content Creation"
-    },
-    {
-      name: "Jason Tang",
-      linkedin: "https://www.linkedin.com/in/jasontangg/",
-      focus: "Community Outreach"
-    },
-  ];
+  useEffect(() => {
+    const fetchTeam = async () => {
+      const [boardRes, committeeRes] = await Promise.all([
+        supabase.from('board_members').select('*'),
+        supabase.from('committee_members').select('*'),
+      ]);
+
+      if (boardRes.data) setBoardMembers(boardRes.data);
+      if (committeeRes.data) setCommitteeMembers(committeeRes.data);
+      setLoading(false);
+    };
+
+    fetchTeam();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-xl">Loading...</div>
+      </div>
+    );
+  }
 
   const getRoleColor = (role: string) => {
     if (role.includes("President")) return "from-primary/80 to-primary/60 border-primary/90";
@@ -117,9 +98,9 @@ export const TeamPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {boardMembers.map((member, index) => (
+            {boardMembers.map((member) => (
               <div
-                key={index}
+                key={member.id}
                 className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-2xl border border-white/30 hover:shadow-3xl transition-all duration-300 group hover:-translate-y-2"
               >
                 {/* Role Badge */}
@@ -173,9 +154,9 @@ export const TeamPage = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {committeeMembers.map((member, index) => (
+            {committeeMembers.map((member) => (
               <div
-                key={index}
+                key={member.id}
                 className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/20 hover:shadow-2xl transition-all duration-300 group"
               >
                 {/* Focus Area Badge */}
