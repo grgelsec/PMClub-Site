@@ -7,7 +7,7 @@ export const JoinPage = () => {
       description: "Connect with fellow product enthusiasts, get event updates, and participate in discussions.",
       icon: "M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z",
       action: "Join Slack",
-      link: "https://join.slack.com/t/productmanage-tps7335/shared_invite/zt-2ybtg0oqc-OrB3KqjS11tgdRwSuaxJNg",
+      link: "https://join.slack.com/t/productmanage-tps7335/shared_invite/zt-3g3z1lfp3-O4eIlkf9OZk7_XCooNYG8Q",
       color: "from-primary/20 to-primary/10 border-primary/30",
       buttonColor: "from-primary to-primary-dark hover:from-primary-dark hover:to-primary"
     },
@@ -228,7 +228,7 @@ export const JoinPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
               <a
-                href="https://join.slack.com/t/productmanage-tps7335/shared_invite/zt-2ybtg0oqc-OrB3KqjS11tgdRwSuaxJNg"
+                href="https://join.slack.com/t/productmanage-tps7335/shared_invite/zt-3g3z1lfp3-O4eIlkf9OZk7_XCooNYG8Q"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-gradient-to-r from-primary to-primary-dark hover:from-primary-dark hover:to-primary text-white px-8 py-4 rounded-2xl font-bold text-lg tracking-wide transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-primary/25"
